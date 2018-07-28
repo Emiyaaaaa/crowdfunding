@@ -2,21 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1c1f0af-92a4-4cd1-b584-62e558831660" name="Default" comment="lala">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/txy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/concentric-circles.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/note/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/note/smsclient.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/note/smsexception.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/note/smsmessage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/userinfo/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extra_apps/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/txy/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/concentric-circles.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/concentric-circles.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userinfo/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/concentric circles/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/concentric circles/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/concentric circles/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/concentric circles/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy_app/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy_app/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy_app/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy_app/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy_app/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/txy_app/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/userinfo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userinfo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concentric circles/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/txy/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concentric circles/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/txy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concentric circles/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/txy/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txy_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/note/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txy_app/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/send_email/migrations/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,11 +33,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/manage.py">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/txy/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="602">
+              <caret line="150" column="15" selection-start-line="150" selection-start-column="15" selection-end-line="150" selection-end-column="15" />
+              <folding>
+                <element signature="e#304#313#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/userinfo/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="19" column="140" selection-start-line="19" selection-start-column="140" selection-end-line="19" selection-end-column="140" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.sqlite3" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db.sqlite3">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="1" column="3779" selection-start-line="1" selection-start-column="3779" selection-end-line="1" selection-end-column="3779" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/txy/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#627#659#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,6 +96,10 @@
         <option value="$PROJECT_DIR$/lalla.py" />
         <option value="$PROJECT_DIR$/txy_app/apps.py" />
         <option value="$PROJECT_DIR$/useeinfo/apps.py" />
+        <option value="$PROJECT_DIR$/concentric circles/settings.py" />
+        <option value="$PROJECT_DIR$/concentric circles/urls.py" />
+        <option value="$PROJECT_DIR$/txy/settings.py" />
+        <option value="$PROJECT_DIR$/apps/userinfo/models.py" />
       </list>
     </option>
   </component>
@@ -70,12 +113,14 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="497" />
-    <option name="y" value="82" />
+    <option name="x" value="495" />
+    <option name="y" value="80" />
     <option name="width" value="1400" />
     <option name="height" value="990" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -91,6 +136,50 @@
             <path>
               <item name="concentric-circles" type="b2602c69:ProjectViewProjectNode" />
               <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="concentric-circles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="concentric-circles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="note" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="concentric-circles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="send_email" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="concentric-circles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="userinfo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="concentric-circles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+              <item name="extra_apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="concentric-circles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="concentric-circles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled" type="462c0819:PsiDirectoryNode" />
               <item name="concentric-circles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -102,14 +191,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../yunquan" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\python\untitled\txy\apps" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\python\untitled\txy\apps" />
+      <recent name="E:\python\untitled\txy" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -131,8 +224,9 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="concentric circles.settings" />
       </envs>
-      <option name="SDK_HOME" value="E:\python\untitled\txy\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\Obama\AppData\Local\Programs\Python\Python36\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -192,15 +286,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32952926" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32952926" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533512" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2600536" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -208,15 +303,16 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="manage.py@concentric-circles" order="8" weight="0.31669044" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="manage.py@yunquan" order="7" weight="0.32952926" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="manage.py@txy" order="7" visible="true" weight="0.32952926" />
+      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="manage.py@yunquan" order="7" weight="0.32952926" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +331,40 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/txy/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3725">
+          <caret line="150" column="15" lean-forward="true" selection-start-line="150" selection-start-column="15" selection-end-line="150" selection-end-column="15" />
+          <folding>
+            <element signature="e#304#313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.sqlite3">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="3779" lean-forward="true" selection-start-line="1" selection-start-column="3779" selection-end-line="1" selection-end-column="3779" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/txy/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#627#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -243,6 +373,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lalla.py" />
+    <entry file="file://$PROJECT_DIR$/txy_app/apps.py" />
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -250,6 +381,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/txy_app/apps.py" />
+    <entry file="file://$USER_HOME$/testvir/Lib/importlib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1600">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/txy/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#627#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.sqlite3">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="3779" selection-start-line="1" selection-start-column="3779" selection-end-line="1" selection-end-column="3779" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/txy/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="150" column="15" selection-start-line="150" selection-start-column="15" selection-end-line="150" selection-end-column="15" />
+          <folding>
+            <element signature="e#304#313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/userinfo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="140" selection-start-line="19" selection-start-column="140" selection-end-line="19" selection-end-column="140" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

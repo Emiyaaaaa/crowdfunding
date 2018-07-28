@@ -6,6 +6,7 @@
         <entryData>
           <resourceRoots>
             <path value="file://$PROJECT_DIR$/apps" />
+            <path value="file://$PROJECT_DIR$/extra_apps" />
           </resourceRoots>
         </entryData>
       </entry>
