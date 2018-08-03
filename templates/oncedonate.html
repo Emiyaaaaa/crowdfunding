@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +27,7 @@
 				<div>
 					<ul class="nav navbar-nav navbar-left mynavbar">
 						<li>
-							<a href="crowdfunding.html">首页</a>
+							<a href="{% url 'crowdfunding' %}">首页</a>
 						</li>
 						<li>
 							<a href="#" style="color:#31903f ;">我要捐款</a>
@@ -38,28 +39,25 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right mynavbar">
 						<li class="head_portrait">
-							<img width="32" height="32" class="img-responsive" src="../static/img/girl.png" />
+							<img width="32" height="32" class="img-responsive" src="../media/{{ user_hand_portrait }}" />
 
 						</li>
 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								喵小媛
+								{{ username }}
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><span id="id_num">
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID：123456
-								</span></li>
 								<li>
-									<a href="personalcenter.html"><span style="color: #CCCCCC; " class="glyphicon glyphicon-home"></span>&nbsp;个人中心</a>
+									<a href="{% url 'personalcenter' %}"><span style="color: #CCCCCC; " class="glyphicon glyphicon-home"></span>&nbsp;个人中心</a>
 								</li>
 								<li>
-									<a href="#"><span style="color: #CCCCCC; " class="glyphicon glyphicon-cog"></span>&nbsp;设置</a>
+									<a href="{% url 'personalcenter' %}"><span style="color: #CCCCCC; " class="glyphicon glyphicon-cog"></span>&nbsp;设置</a>
 								</li>
 								<!--<li class="divider"></li>-->
 								<li>
-									<a href="crowdfunding.html"><span style="color: #CCCCCC; " class="	glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+									<a href="{% url 'crowdfunding' %}"><span style="color: #CCCCCC; " class="	glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
 								</li>
 							</ul>
 						</li>
@@ -127,8 +125,10 @@
 			</ul>
 			<div id="myTabContent" class="tab-content">
 				<div class="tab-pane fade in active" id="project-introduce">
+                    {% autoescape off %}
+                    {{ item.introduce }}
+                    {% endautoescape %}
 
-					{{ item.introduce }}
 
 				</div>
 				<div class="tab-pane fade "  style="position:absolute; height:600px; overflow:auto" id="advance">

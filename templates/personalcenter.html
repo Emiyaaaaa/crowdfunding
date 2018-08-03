@@ -99,10 +99,11 @@
 				<div id="nav-down">
 					<ul class="nav navbar-nav navbar-left mynavbar">
 						<li>
-							<a href="crowdfunding.html">首页</a>
+							<a href="{% url 'crowdfunding' %}">首页</a>
 						</li>
 						<li>
-							<a href="news.html">新闻</a>
+{#							<a href="{% url 'news' %}">新闻</a>#}
+							<a href="/news">新闻</a>
 						</li>
 						<li>
 							<a href="#">应用</a>
@@ -121,10 +122,10 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="{% url 'personalcenter' %}"><span style="color: #CCCCCC; " class="glyphicon glyphicon-home"></span>&nbsp;个人中心</a>
+									<a href="/personalcenter"><span style="color: #CCCCCC; " class="glyphicon glyphicon-home"></span>&nbsp;个人中心</a>
 								</li>
 								<li>
-									<a href="#"><span style="color: #CCCCCC; " class="glyphicon glyphicon-cog"></span>&nbsp;设置</a>
+									<a href="/personalcenter"><span style="color: #CCCCCC; " class="glyphicon glyphicon-cog"></span>&nbsp;设置</a>
 								</li>
 								<!--<li class="divider"></li>-->
 								<li>
@@ -282,7 +283,7 @@
 										<button type="submit" class="btn saveb">保存</button>
 									</div>
 								</div>
-                            {% csrf_token %}
+							{% csrf_token %}
 							</form>
 
 						</div>
@@ -307,8 +308,8 @@
 									<div class="col-sm-offset-1 col-sm-10">
 										<button type="submit" class="btn  saveb">保存</button>
 									</div>
-							</div>
-                            {% csrf_token %}
+							{% csrf_token %}
+							</div>  
 							</form>
 							
                				

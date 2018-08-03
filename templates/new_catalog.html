@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Bootstrap 实例 - 默认的导航栏</title>
+	<title>Bootstrap 新闻</title>
 	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/crowdfunding.css" />
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -80,28 +80,25 @@ nav {
 					</ul>
 					<ul class="nav navbar-nav navbar-right mynavbar">
 						<li class="head_portrait">
-							<img width="32" height="32" class="img-responsive" src="/static/img/girl.png" />
+							<img width="32" height="32" class="img-responsive" src="../media/{{ user_hand_portrait }}" />
 
 						</li>
 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								喵小媛
+								{{ username }}
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><span id="id_num">
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID：123456
-								</span></li>
 								<li>
-									<a href="personalcenter.html"><span style="color: #CCCCCC; " class="glyphicon glyphicon-home"></span>&nbsp;个人中心</a>
+									<a href="/personalcenter"><span style="color: #CCCCCC; " class="glyphicon glyphicon-home"></span>&nbsp;个人中心</a>
 								</li>
 								<li>
-									<a href="#"><span style="color: #CCCCCC; " class="glyphicon glyphicon-cog"></span>&nbsp;设置</a>
+									<a href="/personalcenter"><span style="color: #CCCCCC; " class="glyphicon glyphicon-cog"></span>&nbsp;设置</a>
 								</li>
 								<!--<li class="divider"></li>-->
 								<li>
-									<a href="crowdfunding.html"><span style="color: #CCCCCC; " class="	glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+									<a href="/crowdfunding"><span style="color: #CCCCCC; " class="	glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
 								</li>
 							</ul>
 						</li>

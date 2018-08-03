@@ -19,20 +19,21 @@
 
 	<body>
     {% csrf_token %}
-		<div class="login_box">
-			<img src="/static/img/登陆背景.jpg" style="transform: translateX(-50%);" />
-			<div class="login_box_contain">
-				<h1>登&nbsp;录</h1>
-				<form class="form-control">
-					<input type="text" class="user" placeholder="请输入用户名" />
-					<input type="password" class="password" placeholder="请输入密码" />
-
-					<button class="btn">登&nbsp;录</button>
-					<a id="forgot" class="fl">忘记密码</a>
-					<a href="" id="newuser" class="fr">新用户注册</a>
-				</form>
-			</div>
-		</div>
+{#		<div class="login_box">#}
+{#			<img src="/static/img/登陆背景.jpg" style="transform: translateX(-50%);" />#}
+{#			<div class="login_box_contain">#}
+{#				<h1>登&nbsp;录</h1>#}
+{#				<form class="form-control" method="post" autocomplete="off">#}
+{#					<input type="text" name="username" placeholder="请输入用户名" />#}
+{#					<input type="password" name="password" placeholder="请输入密码" />#}
+{##}
+{#					<button class="btn" tpye = "submit">登&nbsp;录</button>#}
+{#					<a href="forgetpwd.html" id="forgot" class="fl">忘记密码</a>#}
+{#					<a href="{% url 'regist' %}" id="newuser" class="fr">新用户注册</a>#}
+{#                    {% csrf_token %}#}
+{#				</form>#}
+{#			</div>#}
+{#		</div>#}
 		<div class="login_background"> </div>
 		<!--导航栏-->
 		<div class="header">
@@ -57,14 +58,14 @@
 
 					</ul>
 				</div>
-				<ul class="fr login-box">
-					<li class="fl">
-						<a href="#" class="login">登录</a>
-					</li>
-					<li class="fl">
-						<a href="#">注册</a>
-					</li>
-				</ul>
+{#				<ul class="fr login-box">#}
+{#					<li class="fl">#}
+{#						<a href="#" class="login">登录</a>#}
+{#					</li>#}
+{#					<li class="fl">#}
+{#						<a href="#">注册</a>#}
+{#					</li>#}
+{#				</ul>#}
 				<div class="search fr">
 					<a href="" class="icon-search">
 						<svg class="icon" id="search-icon" aria-hidden="true">

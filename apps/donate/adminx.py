@@ -13,10 +13,7 @@ class BaseSetting():
     enable_themes = True
     use_bootswatch = True
 
-class GlobalSetting():
-    site_title = '云顶'
-    site_footer = '云顶'
-    menu_style = 'accordion'
+
 
 class projectadmin(object):
     list_display = ['user_name','proj_class','project_id','name','introduce','action','befor_image','later_image','target_money',
@@ -39,7 +36,9 @@ class Donation_logadmin():
 xadmin.site.register(project,projectadmin)
 xadmin.site.register(prj_development,prj_developmentadmin)
 xadmin.site.register(Donation_log,Donation_logadmin)
-xadmin.site.register(views.BaseAdminView,BaseSetting)
-xadmin.site.register(views.CommAdminView,GlobalSetting)
+# xadmin.site.unregister(views.BaseAdminView)
+# xadmin.site.unregister(views.CommAdminView)
+# xadmin.site.register(views.BaseAdminView,BaseSetting)
+# xadmin.site.register(views.CommAdminView,GlobalSetting)
 
 

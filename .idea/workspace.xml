@@ -5,12 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1c1f0af-92a4-4cd1-b584-62e558831660" name="Default" comment="gx">
+      <change afterPath="$PROJECT_DIR$/apps/donate/migrations/0002_auto_20180803_1517.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/donate/adminx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/donate/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0002_auto_20180728_1802.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0003_auto_20180728_1802.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0004_auto_20180728_1900.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0005_auto_20180728_1909.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0006_auto_20180728_1914.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0007_auto_20180728_2032.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0008_auto_20180728_2041.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0009_auto_20180730_1913.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0010_auto_20180730_2135.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0011_auto_20180731_0828.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0012_auto_20180731_1128.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0013_auto_20180731_1139.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0014_auto_20180731_1445.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0015_auto_20180802_0926.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/migrations/0016_auto_20180803_0842.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/donate/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/donate/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/donate/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/donate/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/userinfo/generat_captcha.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userinfo/generat_captcha.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/news/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/userinfo/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userinfo/adminx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/userinfo/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userinfo/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/userinfo/migrations/0002_auto_20180730_1908.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/userinfo/migrations/0003_remove_usermessage_user_nickname.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/userinfo/migrations/0004_auto_20180802_1841.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/userinfo/migrations/0005_auto_20180803_0842.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/userinfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/userinfo/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra_apps/xadmin/widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_apps/xadmin/widgets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/captcha.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/captcha.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crowdfunding.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crowdfunding.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/new_catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/new_catalog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/new_file.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/oncedonate.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/oncedonate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personalcenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personalcenter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/regist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/regist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/txy/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/txy/urls.py" afterDir="false" />
     </list>
+    <ignored path="../../yunquan/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,21 +76,17 @@
       <file leaf-file-name="personalcenter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/personalcenter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="130" column="65" selection-start-line="130" selection-start-column="65" selection-end-line="130" selection-end-column="65" />
-              <folding>
-                <element signature="e#4292#4298#0#HTML" expanded="true" />
-                <element signature="e#7168#7174#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="-150">
+              <caret line="114" column="103" selection-start-line="114" selection-start-column="103" selection-end-line="114" selection-end-column="103" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/txy/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="47" column="59" lean-forward="true" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+            <state relative-caret-position="258">
+              <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
               <folding>
                 <element signature="e#662#702#0" expanded="true" />
               </folding>
@@ -59,22 +95,10 @@
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/userinfo/views.py">
+        <entry file="file://$PROJECT_DIR$/apps/news/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="190" column="60" selection-start-line="190" selection-start-column="60" selection-end-line="190" selection-end-column="60" />
-              <folding>
-                <element signature="e#23#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generat_captcha.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/userinfo/generat_captcha.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="-2267">
+              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -82,8 +106,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/donate/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1148">
-              <caret line="268" column="34" lean-forward="true" selection-start-line="268" selection-start-column="34" selection-end-line="268" selection-end-column="34" />
+            <state relative-caret-position="222">
+              <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -91,32 +115,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/txy/settings.py">
+      <file leaf-file-name="initiator.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/initiator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-152">
-              <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
-              <folding>
-                <element signature="e#304#313#0" expanded="true" />
-              </folding>
+            <state>
+              <caret line="72" column="43" lean-forward="true" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crowdfunding.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/news.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4503">
+              <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crowdfunding.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/crowdfunding.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9981">
-              <caret line="747" column="54" lean-forward="true" selection-start-line="747" selection-start-column="54" selection-end-line="747" selection-end-column="54" />
+            <state relative-caret-position="-8625">
+              <caret line="51" column="60" lean-forward="true" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="regist.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/regist.html">
+      <file leaf-file-name="new_catalog.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/new_catalog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2045">
-              <caret line="77" column="74" selection-start-line="77" selection-start-column="74" selection-end-line="77" selection-end-column="74" />
+            <state relative-caret-position="100">
+              <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personal.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/personal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -133,7 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>login</find>
       <find>&quot;(fonts/.*?)&quot;</find>
       <find>mp4</find>
       <find>upaiyun</find>
@@ -161,8 +199,9 @@
       <find>user_id</find>
       <find>mal</find>
       <find>退出</find>
-      <find>提交</find>
       <find>url</find>
+      <find>提交</find>
+      <find>msg</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -198,7 +237,6 @@
         <option value="$PROJECT_DIR$/apps/userinfo/verifycode_send.py" />
         <option value="$PROJECT_DIR$/templates/forgetpwd.html" />
         <option value="$PROJECT_DIR$/apps/userinfo/1.html" />
-        <option value="$PROJECT_DIR$/templates/personal.html" />
         <option value="$PROJECT_DIR$/apps/userinfo/forms.py" />
         <option value="$PROJECT_DIR$/apps/userinfo/models.py" />
         <option value="$PROJECT_DIR$/templates/personalcenter2.html" />
@@ -211,11 +249,17 @@
         <option value="$PROJECT_DIR$/txy/settings.py" />
         <option value="$PROJECT_DIR$/apps/userinfo/generat_captcha.py" />
         <option value="$PROJECT_DIR$/templates/regist.html" />
-        <option value="$PROJECT_DIR$/templates/personalcenter.html" />
         <option value="$PROJECT_DIR$/txy/urls.py" />
-        <option value="$PROJECT_DIR$/apps/donate/views.py" />
         <option value="$PROJECT_DIR$/apps/userinfo/views.py" />
         <option value="$PROJECT_DIR$/templates/crowdfunding.html" />
+        <option value="$PROJECT_DIR$/templates/new_file.html" />
+        <option value="$PROJECT_DIR$/templates/personalcenter.html" />
+        <option value="$PROJECT_DIR$/apps/news/views.py" />
+        <option value="$PROJECT_DIR$/extra_apps/xadmin/widgets.py" />
+        <option value="$PROJECT_DIR$/templates/news.html" />
+        <option value="$PROJECT_DIR$/templates/new_catalog.html" />
+        <option value="$PROJECT_DIR$/templates/personal.html" />
+        <option value="$PROJECT_DIR$/apps/donate/views.py" />
       </list>
     </option>
   </component>
@@ -266,13 +310,34 @@
               <item name="txy" type="b2602c69:ProjectViewProjectNode" />
               <item name="txy" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="donate" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="txy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="txy" type="b2602c69:ProjectViewProjectNode" />
               <item name="txy" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="txy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="userinfo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="txy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="txy" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="userinfo" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="txy" type="b2602c69:ProjectViewProjectNode" />
@@ -735,7 +800,21 @@
       <option name="project" value="LOCAL" />
       <updated>1533257308287</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="gx">
+      <created>1533263374300</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1533263374300</updated>
+    </task>
+    <task id="LOCAL-00009" summary="gx">
+      <created>1533265873634</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1533265873634</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -756,10 +835,10 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32952926" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32952926" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.32524964" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.2553495" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32952926" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16487935" />
-      <window_info anchor="bottom" id="manage.py@txy" order="13" weight="0.5235378" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16487935" />
+      <window_info anchor="bottom" id="manage.py@txy" order="13" weight="0.16119829" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -851,48 +930,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/js/jquery-1.8.3.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="1" column="829" lean-forward="true" selection-start-line="1" selection-start-column="829" selection-end-line="1" selection-end-column="829" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/jquery-3.2.1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1276" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/echarts-master/map/js/china.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8976">
-          <caret line="25" column="1634" selection-start-line="25" selection-start-column="1634" selection-end-line="25" selection-end-column="1634" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/forgetpwd.html" />
-    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/django/conf/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/userinfo/1.html" />
     <entry file="file://$PROJECT_DIR$/apps/send_email/smsclient.py" />
     <entry file="file://$PROJECT_DIR$/apps/send_email/smsmessage.py" />
     <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/views/edit.py">
@@ -913,13 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
           <caret line="99" column="25" lean-forward="true" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/personal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="351" column="37" selection-start-line="351" selection-start-column="20" selection-end-line="351" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1137,17 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/personalcenter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="130" column="65" selection-start-line="130" selection-start-column="65" selection-end-line="130" selection-end-column="65" />
-          <folding>
-            <element signature="e#4292#4298#0#HTML" expanded="true" />
-            <element signature="e#7168#7174#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/pymysql/err.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
@@ -1165,47 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/userinfo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/regist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2045">
-          <caret line="77" column="74" selection-start-line="77" selection-start-column="74" selection-end-line="77" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/txy/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
-          <folding>
-            <element signature="e#304#313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/donate/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1148">
-          <caret line="268" column="34" lean-forward="true" selection-start-line="268" selection-start-column="34" selection-end-line="268" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crowdfunding.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9981">
-          <caret line="747" column="54" lean-forward="true" selection-start-line="747" selection-start-column="54" selection-end-line="747" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/userinfo/generat_captcha.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -1213,23 +1195,130 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/regist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2031">
+          <caret line="77" column="74" selection-start-line="77" selection-start-column="74" selection-end-line="77" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/userinfo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="190" column="60" selection-start-line="190" selection-start-column="60" selection-end-line="190" selection-end-column="60" />
+        <state relative-caret-position="624">
+          <caret line="132" column="67" selection-start-line="132" selection-start-column="67" selection-end-line="132" selection-end-column="67" />
           <folding>
             <element signature="e#23#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new_file.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="72" column="41" lean-forward="true" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/userinfo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/txy/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
+          <folding>
+            <element signature="e#304#313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/personalcenter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="114" column="103" selection-start-line="114" selection-start-column="103" selection-end-line="114" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/news/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2267">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/widgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="74" column="103" selection-start-line="74" selection-start-column="103" selection-end-line="74" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/txy/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="47" column="59" lean-forward="true" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+        <state relative-caret-position="258">
+          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
           <folding>
             <element signature="e#662#702#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/donate/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/initiator.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="72" column="43" lean-forward="true" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/personal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new_catalog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4503">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crowdfunding.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8625">
+          <caret line="51" column="60" lean-forward="true" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
         </state>
       </provider>
     </entry>

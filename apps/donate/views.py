@@ -85,7 +85,14 @@ class CrowdFundingDisplay(View):
                     'log4':log4,'log5':log5,'log6':log6,'tatal_project':total_project,
                     'total_money':total_money,'total_support':total_support,
                     'news':content}
+            try:
+                username = request.session["username"]
+                login_form = {"logined": "1", "msg": username}
+            except:
+                pass
             all_form = dict(crowdfunding_form,**login_form)
+
+
             return render(request,'crowdfunding.html',all_form)
         except Exception:
             return HttpResponse("请求的页面不存在哦")
@@ -125,9 +132,8 @@ class CrowdFundingDisplay(View):
                     login_from = {"logined": "0", "msg": "密码错误"}
                     return CrowdFundingDisplay.get(self, request, login_from)
             else:
-                login_from = {"logined": "0", "msg": "用户名不存在" + name_pw_massage}
+                login_from = {"logined": "0", "msg": "用户名不存在"}
                 return CrowdFundingDisplay.get(self, request, login_from)
-
 
 class Donate(View):
 
@@ -144,9 +150,21 @@ class Donate(View):
                     percent = '100'
                 project.objects.filter(project_id=Donate.project_id).update(see_num=(item.see_num+1))
                 Donate.subject = item.name
-                return render(request,'oncedonate.html',{'item':item,'develoment':develoment,'percent':percent})
+                try:
+
+                    username = request.session["username"]
+                    user_hand_portrait = UserMessage.objects.get(username = username).user_hand_portrait
+                    return render(request,'oncedonate.html',{'item':item,
+                                                             'develoment':develoment,
+                                                             'percent':percent,
+                                                             'username':username,
+                                                             'user_hand_portrait':user_hand_portrait})
+                except:
+                    return render(request, 'oncedonate.html', {'item': item,
+                                                               'develoment': develoment})
+
             except Exception:
-                return HttpResponse('请求的页面不存在哦')
+                return HttpResponse('请求的页面不在哦')
         else:
             '''
             更新数据库
@@ -180,12 +198,13 @@ class Donate(View):
 
 
     def post(self,request):
-        try:
-            order = pay(request,Donate.project_id,Donate.subject)
+        # Donate.project_id = int(request.GET.get("project_id"))
+        # item = project.objects.get(project_id=Donate.project_id)
+        # Donate.subject = item.name
 
-            return HttpResponseRedirect('https://openapi.alipaydev.com/gateway.do?' +order )
-        except Exception:
-            return HttpResponse('请输入金额')
+        order = pay(request,Donate.project_id,Donate.subject)
+
+        return HttpResponseRedirect('https://openapi.alipaydev.com/gateway.do?' +order )
 
 
 
@@ -196,8 +215,8 @@ def pay(request,project_id,subject):
     :param request:
     :return:
     '''
-    app_private_key_string = open("E:\\Users\ASUS\PycharmProjects\\txy\\alipay_private_key.pem").read()
-    alipay_public_key_string = open("E:\\Users\ASUS\PycharmProjects\\txy\\alipay_public_key.pem").read()
+    app_private_key_string = open("F:\\txy\\alipay_private_key.pem").read()
+    alipay_public_key_string = open("F:\\txy\\alipay_public_key.pem").read()
     order_id = str(uuid.uuid1())
     money = float(request.POST.get('money', ''))
     alipay = AliPay(
@@ -213,7 +232,7 @@ def pay(request,project_id,subject):
         out_trade_no=order_id,
         total_amount=money,
         subject=subject,
-        return_url="http://127.0.0.1:8080/oncedonate/?project_id="+str(project_id),
+        return_url="http:127.0.0.1:8000/oncedonate/?project_id="+str(project_id),
         #notify_url="https://example.com/notify"  # 可选, 不填则使用默认notify url
     )
     return order_string
@@ -225,7 +244,10 @@ def pay(request,project_id,subject):
 class Personal(View):
     def get(self,request):
         #user_id = request.uesr.id
-        username = request.session['username']
+        try:
+            username = request.session['username']
+        except:
+            return CrowdFundingDisplay.get(self,request)
         user_id = UserMessage.objects.get(username=username).id
         projects = project.objects.filter(user_name_id = user_id,state = 1)
         project_num = projects.__len__()
@@ -260,9 +282,19 @@ class Personal(View):
             audit_projects = project.objects.filter(Q(user_name_id=user_id) & (Q(state=0) | Q(state=2))&Q(is_delete=1))
             audit_project_num = audit_projects.__len__()
             all = zip(projects, percents)
-            return render(request, 'personal.html', {'project_num': project_num, 'help_num': help_num,
-                                                     'auid_project_num': audit_project_num,
-                                                     'audit_projects': audit_projects, 'all': all})
+            all_message = UserMessage.objects.filter(username=username)
+            for message in all_message:
+                return render(request, 'personal.html', {'audit_projects': audit_projects,
+                                                           'all': all,
+                                                           "username": username,
+                                                           "user_signature": message.user_signature,
+                                                           "user_hand_portrait": message.user_hand_portrait,
+                                                           'project_num': project_num,
+                                                           'help_num': help_num,
+                                                           'auid_project_num': audit_project_num,
+                                                           'audit_projects': audit_projects,
+                                                           'all': all
+                                                           })
         except Exception:
             HttpResponse('页面被外星人盗走la')
 
@@ -274,7 +306,11 @@ class Personal(View):
 class PersonalCenter(View):
     def get(self,request):
         #user_id = request.user.id
-        username = request.session['username']
+        try:
+            username = request.session['username']
+        except:
+            return CrowdFundingDisplay.get(self,request)
+
         user_id = UserMessage.objects.get(username=username).id
         projects = project.objects.filter(user_name_id=user_id, state=1,is_delete=1)
         project_num = projects.__len__()
@@ -289,10 +325,8 @@ class PersonalCenter(View):
         audit_projects = project.objects.filter(Q(user_name_id=user_id) & (Q(state=0) | Q(state=2)))
         try:
             username = request.session["username"]
-            all_message = UserMessage.objects.filter(username=username)
             project_id = request.GET.get('project_id')
             project.objects.filter(project_id=project_id).update(is_delete=0)
-            username = request.session['username']
             user_id = UserMessage.objects.get(username=username).id
             projects = project.objects.filter(user_name_id=user_id, state=1)
             project_num = projects.__len__()
@@ -303,9 +337,10 @@ class PersonalCenter(View):
                     num = '100'
                 percents.append(num)
             helps = Donation_log.objects.filter(Donation_name_id=user_id)
-            audit_projects = project.objects.filter(
-                Q(user_name_id=user_id) & (Q(state=0) | Q(state=2)) & Q(is_delete=1))
+            audit_projects = project.objects.filter(Q(user_name_id=user_id) & (Q(state=0) | Q(state=2)) & Q(is_delete=1))
             all = zip(projects, percents)
+
+            all_message = UserMessage.objects.filter(username=username)
             for message in all_message:
                 return render(request, 'personalcenter.html', {   'audit_projects': audit_projects,
                                                                    'all': all,
@@ -318,7 +353,7 @@ class PersonalCenter(View):
         except Exception:
             return HttpResponse('页面被外星人盗走la')
 
-        # return render(request, 'personalcenter.html', { 'audit_projects': audit_projects, 'all': all})
+        return render(request, 'personalcenter.html', { 'audit_projects': audit_projects, 'all': all})
 
     def post(self, request):
         # 添加两个错误处理，可以使两个form分开提交

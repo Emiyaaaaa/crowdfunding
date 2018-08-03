@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 import time
 from donate.views import CrowdFundingDisplay
+from userinfo.models import UserMessage
 
 # Create your views here.
 
@@ -32,8 +33,6 @@ from donate.views import CrowdFundingDisplay
 def news(request,id):
     if request.is_ajax():
         state = request.POST.get('state')
-
-        print('state:',request.POST.get('state'))
         if state == 'satis':
             Satis.objects.create(news=News.objects.filter(id = id).first())
         if state == 'notverysatid':
@@ -60,6 +59,21 @@ def news(request,id):
                     next = publish_news[step+1]
                     next_path = str(next.id)
                     next_title = str(next.title)
+                try:
+                    username = request.session["username"]
+                    return render(request, 'new_catalog.html', {
+                                                                'username': username,
+                                                                'news_text': news.text,
+                                                                'news_title': news.title,
+                                                                'news_date': news.update_at,
+                                                                'news_source_from': news.source_from,
+                                                                'front_news_path': front_path,
+                                                                'next_news_path': next_path,
+                                                                'front_news_title': front_title,
+                                                                'next_news_title': next_title
+                                                                })
+                except:
+                    pass
                 return render(request,'news.html',{'news_text':news.text,'news_title':news.title,'news_date':news.update_at,'news_source_from':news.source_from,
                                                   'front_news_path':front_path,'next_news_path':next_path,
                                                    'front_news_title':front_title,'next_news_title':next_title
@@ -87,4 +101,13 @@ def news_catalog(request):
         for j in range(i + 1, len(content)):
             if content[i].update_at <= content[j].update_at:
                 content[i], content[j] = content[j], content[i]
+    try:
+        username = request.session["username"]
+        user_hand_portrait = UserMessage.objects.get(username=username).user_hand_portrait
+        return render(request, 'new_catalog.html', {'news':content,
+                                                    'username': username,
+                                                    'user_hand_portrait': user_hand_portrait})
+    except:
+        pass
+
     return render(request,'new_catalog.html',{'news':content})

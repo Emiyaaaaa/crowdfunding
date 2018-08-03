@@ -75,7 +75,7 @@
                 </div>
 
                 <div id="box-agree" class="box-agree">
-                    <input type="checkbox" id="agreeRule" name="agree_rule" value="" />
+                    <input type="checkbox" id="agreeRule" value="" name="agree_rule"/>
                     <label  for="agreeRule">我已阅读并同意</label>
                     <a class="use" id="id-user" href="#" data-toggle="modal" data-target="#useModal">《使用条款》</a><span>
                         及
@@ -83,7 +83,7 @@
                     <a class="commitment" id="id-commitment" href="#" data-toggle="modal" data-target="#commitmentModal">《发起人使用书》</a>
                 </div>
                 <button class="btn" tpye = "submit" id="button-submit">提交</button>
-                {% csrf_token %}
+				{% csrf_token %}
    			 </form>
    			 </div>
       

@@ -70,7 +70,7 @@ class RegisterView(View):
         input_user_home_adress = request.POST.get("user_home_adress")
         input_user_company_name = request.POST.get("user_company_name")
         input_captcha = request.POST.get("captcha")
-        is_agree_rule = request.POST.get("agree_rule")
+        input_agree_rule = request.POST.get("agree_rule")
 
         
         username_list = []
@@ -167,7 +167,7 @@ class RegisterView(View):
         elif input_captcha != RegisterView.captcha:
             regist_error["captcha_error"] = "验证码错误"
 
-        if is_agree_rule == None:
+        if input_agree_rule == None:
             regist_error["agree_rule_error"] = "未同意条款"
 
         if regist_error != {} :
@@ -188,12 +188,13 @@ class RegisterView(View):
                                            user_home_address=input_user_home_adress,
                                            user_company_name=input_user_company_name
                                            )
-                request.session['username'] = input_username
+                request.session["username"] = input_username
                 login_form = {"logined": "1", "msg": input_username}
                 return render(request, 'crowdfunding.html', login_form)
+
+
             except:
                 return self.get(request)
-
 
 
 
