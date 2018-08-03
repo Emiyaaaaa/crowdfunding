@@ -190,10 +190,11 @@ class RegisterView(View):
                                            )
                 request.session['username'] = input_username
                 login_form = {"logined": "1", "msg": input_username}
+                return render(request, 'crowdfunding.html', login_form)
             except:
                 return self.get(request)
 
-            return render(request,'crowdfunding.html',login_form)
+
 
 
 class ModifyMessageView(View):

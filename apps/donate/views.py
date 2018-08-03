@@ -18,7 +18,7 @@ import re
 # Create your views here.
 
 class CrowdFundingDisplay(View):
-    def get(self,request):
+    def get(self,request,login_form = {}):
         try:
             edu = project.objects.filter(proj_class='教育助学',is_display=0,is_delete=1)
             index = edu.latest("project_id")
@@ -77,15 +77,16 @@ class CrowdFundingDisplay(View):
                 for j in range(i + 1, len(content)):
                     if content[i].created_at <= content[j].created_at:
                         content[i], content[j] = content[j], content[i]
-
-            return render(request,'crowdfunding.html',{'edu1':edu1,'edu2':edu2,'edu3':edu3,
-                                                       'edu4':edu4,'edu5':edu5,'edu6':edu6,'edu7':edu7,
-                                                       'support1':support1,'support2':support2,'support3':support3,
-                                                       'support4':support4,'support5':support5,'support6':support6,
-                                                       'support7':support7,'log1':log1,'log2':log2,'log3':log3,
-                                                       'log4':log4,'log5':log5,'log6':log6,'tatal_project':total_project,
-                                                       'total_money':total_money,'total_support':total_support,
-                                                       'news':content})
+            crowdfunding_form = {'edu1':edu1,'edu2':edu2,'edu3':edu3,
+                    'edu4':edu4,'edu5':edu5,'edu6':edu6,'edu7':edu7,
+                    'support1':support1,'support2':support2,'support3':support3,
+                    'support4':support4,'support5':support5,'support6':support6,
+                    'support7':support7,'log1':log1,'log2':log2,'log3':log3,
+                    'log4':log4,'log5':log5,'log6':log6,'tatal_project':total_project,
+                    'total_money':total_money,'total_support':total_support,
+                    'news':content}
+            all_form = dict(crowdfunding_form,**login_form)
+            return render(request,'crowdfunding.html',all_form)
         except Exception:
             return HttpResponse("请求的页面不存在哦")
 
@@ -94,9 +95,11 @@ class CrowdFundingDisplay(View):
         pass_word = request.POST.get("password")
 
         if user_name == "":
-            return render(request, "crowdfunding.html", {"logined": "0", "msg": "用户名不能为空"})
+            login_from = {"logined": "0", "msg": "用户名不能为空"}
+            return CrowdFundingDisplay.get(self,request,login_from)
         elif pass_word == "":
-            return render(request, "crowdfunding.html", {"logined": "0", "msg": "密码不能为空"})
+            login_from = {"logined": "0", "msg": "密码不能为空"}
+            return CrowdFundingDisplay.get(self,request,login_from)
         else:
             name_pw_massage = UserMessage.objects.filter(username=user_name)
             email_pw_massage = UserMessage.objects.filter(email=user_name)
@@ -105,21 +108,25 @@ class CrowdFundingDisplay(View):
                     pw = name_pw_msg.password
                 if pw == pass_word:
                     request.session["username"] = user_name
-                    return render(request, "crowdfunding.html", {"logined": "1", "msg": user_name})
+                    login_from = {"logined": "1", "msg": user_name}
+                    return CrowdFundingDisplay.get(self, request, login_from)
                 else:
-                    return render(request, "crowdfunding.html", {"logined": "0", "msg": "密码错误" + user_name})
+                    login_from = {"logined": "0", "msg": "密码错误"}
+                    return CrowdFundingDisplay.get(self, request, login_from)
 
             elif email_pw_massage:
                 for email_pw_msg in email_pw_massage:
                     pw = email_pw_msg.password
                 if pw == pass_word:
                     request.session["username"] = user_name
-                    return render(request, "crowdfunding.html", {"logined": "1", "msg": user_name})
+                    login_from = {"logined": "1", "msg": user_name}
+                    return CrowdFundingDisplay.get(self, request, login_from)
                 else:
-                    return render(request, "crowdfunding.html", {"logined": "0", "msg": "密码错误"})
+                    login_from = {"logined": "0", "msg": "密码错误"}
+                    return CrowdFundingDisplay.get(self, request, login_from)
             else:
-                return render(request, "crowdfunding.html", {"logined": "0", "msg": "用户名不存在" + name_pw_massage})
-
+                login_from = {"logined": "0", "msg": "用户名不存在" + name_pw_massage}
+                return CrowdFundingDisplay.get(self, request, login_from)
 
 
 class Donate(View):
