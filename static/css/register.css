@@ -1,0 +1,120 @@
+*{margin:0;padding: 0;box-sizing: border-box; font-family: "微软雅黑";}
+li{list-style-type: none;}
+a{text-decoration: none; color: #333;}
+
+/*预定义样式*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+img {
+    vertical-align: middle;
+}
+p{
+	font-size: 15px;
+}
+/*轮播图开始*/
+.banner{
+	width: 1000px;
+	height: 300px;
+	margin: auto;
+	position: relative;
+	top: 10px;
+}
+/*箭头*/
+.arrow{
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	margin: -40px 20px;
+	/*opacity: .8;*/
+	
+}
+/*左右箭头*/
+.arrow img{
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	
+}
+.arrow:hover{
+	opacity: 1;
+}
+.arrow-left{
+	left: 0;
+}
+.arrow-right{
+	right: 0;
+	transform: rotate(180deg);/*旋转180度*/
+}
+/*图片盒子*/
+.images{
+	width: 1000px;
+	height: 300px;
+	overflow: hidden;
+	border-radius: 5px;
+	
+}
+.images img{
+	width: 100%;height: 100%;
+	
+}
+/*images中的每个小盒子*/
+.item{
+	display: none;
+	width: 1000px;
+	height: 300px;
+	position: relative;	
+}
+.active{
+	display: block;
+}
+/*盒子上的字*/
+.console{
+	width: 1000px;
+	height: 300px;
+	position: absolute;
+	display: block;
+	z-index: 11;
+	color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    text-align: center;
+}
+ 
+
+.console p:nth-child(1){
+	display: block;
+	width: 100%;
+	font-size: 45px;
+    font-weight: 500;
+    line-height: 135px;
+    color: #fff;
+}
+
+
+/*指示器*/
+.poinetr-box{
+	position: absolute;
+	right:10px;
+	bottom: 10px;
+	margin-right: 400px;
+}
+
+.poinetr-box li{
+	width: 28px;
+	height: 7px;
+	margin: 20px;
+	border-radius: 3px;
+	background-color: whitesmoke;
+	float: left;
+	
+}
+.poinetr-box li.active{
+	
+	background-color: lightskyblue;
+}

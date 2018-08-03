@@ -1,0 +1,285 @@
+.header{
+	height: 60px;
+	background-color: #C3C3C3;
+	box-shadow: 0 4px 6px rgba(50,50,50,.1);
+}
+.header-wrap{
+	width: 80%;
+	height: 60px;
+	margin: auto;
+	vertical-align: auto;
+	font-size: 16px;
+}
+.logo-box{
+	height: 70px;width: 200px;
+	margin: 0 20px;
+	transform: translateY(-8%);
+}
+.logo-box img{
+	height:100%;width:auto;	
+}
+.nav a{
+	position: relative;
+	display: block;
+	height: 60px; line-height: 60px;
+	padding:0 20px;
+	color: #FFFFFF;
+	
+}
+.nav a:hover{
+	color:#31903f ;
+	transform: translateY(-5%) ;
+	transition: all 0.5s ease-in-out; 
+}
+
+.nav .new{
+	position: absolute;
+	right: 5px;
+	top: 10px;
+}
+.login-box{
+	padding-right:20px ;
+}
+.login-box a{
+	height: 60px;
+	line-height: 60px;
+	padding: 0 14px;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+.login-box a:hover{
+	color: #31903f;
+	
+}
+.login-box .icon-shopping-cart{
+	font-size: 24px;
+	position: relative;
+	bottom: -4px;
+	
+}
+.search{
+	width: 230px;
+	height: 60px;
+	padding-top: 7px;
+	margin-right: 15px;
+	position: relative;
+}
+.search input{
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #eee;	
+	height: 38px;
+	line-height: 38px;
+	background: transparent;
+}
+
+.search input:focus{
+	outline: none;
+	border-bottom:1px solid #FFFFFF ;
+}
+.search .icon-search{
+	position: absolute;
+	font-size: 20px;
+	top: 15px;
+	right: 0;
+	color: #000 !important;
+}
+.search #search-icon:hover{
+	color:#FF2815;
+}
+.search input::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #FFFFFF; 
+} 
+.search input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #FFFFFF; 
+} 
+.search input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #FFFFFF; 
+} 
+.search input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #FFFFFF; 
+} 
+
+
+.search .link{
+	position: absolute;
+	left: 0;
+	top: 15px;
+	
+}
+.search .link a{
+	padding: 5px 10px;
+	font-size: 12px;
+	background-color: #CCCCCC;
+	color: #FFFFFF;
+	/*opacity: 0.8;*/
+}
+.news_title{
+	width: 70%;
+	height: 40px;
+	margin: auto;
+}
+.news_title{
+	width: 100%;
+    display: block;
+	font-weight: 700;
+	/*font-size: 30px;*/
+    color: #4d4f53;
+    letter-spacing: 1px;
+    line-height: 54px;
+    padding: 40px 0;
+	margin: 0;
+}
+.top_bar{
+	width: 72% !important;
+	height: 80px;
+	border: 1px solid #e5e5e5;
+    border-width: 1px 0;
+    width: 100%;
+    background: #fff;
+    margin: auto;
+}
+.date_source{
+    float: left;
+    line-height: 16px;
+    padding: 30px 0;
+    font-size: 14px;
+    color: #888;
+}
+.date_source #source_from{
+	color: #888 !important;
+}
+.article{
+	width: 70%;
+	color: #4d4f53;
+	font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    margin: auto;
+    text-align: left;
+	margin-bottom: 20px;
+}
+.image{
+	margin-top: 6%;
+}
+.article img{
+	max-width: 500px;
+	max-height: 400px;
+	display: inline-block;
+	box-shadow: 0 4px 6px rgba(50,50,50,.3);
+	
+}
+
+.change_potr{
+	width: 40%;
+	height: 50px;
+	text-align: left;
+	margin-left: 40%;
+	margin-top: 5%;
+}
+.change_potr a{
+	width: 100px;
+	padding: 5px;
+	font-size: 17px;
+	color: #000000;
+	margin-left: 4%;
+}
+.change_potr a:hover{
+	background-color: #40cc61;
+	border-radius: 5px;
+}
+.returnToIndex{
+	display: block;
+	font-size: 18px;
+	color:#c1c1c1;
+	margin-top: 1%;
+	margin-left: 14%;
+	
+}
+.share_btn{
+	display: block;
+	font-size: 18px;
+	width: 900px;
+	height: 50px;
+	margin-top: 6%;
+	margin-left: 14%;
+	color:#c1c1c1;
+}
+.share_btn ol{
+	margin-left: 2%;
+	transform: translateY(-14%);
+}
+/*分享*/
+/*
+
+.share_btn svg{
+	margin-right: 10px;
+	margin-left: 15px;
+	bottom: 10px;
+    color: #DDDDDD;
+    cursor: pointer;
+    border-radius: 100%;
+    font-size: 26px;
+  	background: #4e5e6d;
+    float: left;
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 2px solid rgba(0,0,0);
+}
+.share_btn .share-qq:hover{
+	background-color: #428bca;
+	
+}
+.share_btn svg:hover{
+	 color: #FFFFFF;
+}
+.share_btn .share-wechat:hover{
+	background-color: #3ecf2c;
+	
+}
+.share_btn .share-weibo:hover{
+	background-color: #d9534f;
+	
+}
+.qc_share_icon_3 .bt_icon{
+	width: 200px!important;
+}
+.bdsharebuttonbox{
+	width: 70%;
+	height: 100px;
+}
+.bdsharebuttonbox .bds_more{
+	width: 50px !important;
+	height: 50px !important;
+}
+#ckepop1 #share-qq{
+	width: 1000px !important;
+	height: 1000px !important;
+}*/
+.degreeOfsatisfaction{
+	width: 250px;
+	height: 50px;
+}
+.degreeOfsatisfaction svg{
+	margin-top: 10px;
+	margin-left: 15px;
+	bottom: 10px;
+    color: #CCCCCC;
+    cursor: pointer;
+    border-radius: 100%;
+    font-size: 26px;
+  	background: #FFFFFF;
+    float: left;
+    position: relative;
+    display: block;
+    width: 38px;
+    height: 38px;
+    line-height: 40px;
+    border-bottom: 2px solid rgba(0,0,0);
+}
+.degreeOfsatisfaction svg:hover{
+	 color: #299d13;
+}

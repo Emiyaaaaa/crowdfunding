@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="../static/img/heart.png">
+		<title>我要捐助</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/oncedonate.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/bottom.css"/>
+	</head>
+
+
+</ul>
+
+	<body>
+
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<img class="img-responsive" src="../static/img/童心圆logo.png" width="134.6" height="70" />
+				</div>
+				<div>
+					<ul class="nav navbar-nav navbar-left mynavbar">
+						<li>
+							<a href="crowdfunding.html">首页</a>
+						</li>
+						<li>
+							<a href="#" style="color:#31903f ;">我要捐款</a>
+						</li>
+						<li>
+							<a href="#">应用</a>
+						</li>
+
+					</ul>
+					<ul class="nav navbar-nav navbar-right mynavbar">
+						<li class="head_portrait">
+							<img width="32" height="32" class="img-responsive" src="../static/img/girl.png" />
+
+						</li>
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								喵小媛
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><span id="id_num">
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID：123456
+								</span></li>
+								<li>
+									<a href="personalcenter.html"><span style="color: #CCCCCC; " class="glyphicon glyphicon-home"></span>&nbsp;个人中心</a>
+								</li>
+								<li>
+									<a href="#"><span style="color: #CCCCCC; " class="glyphicon glyphicon-cog"></span>&nbsp;设置</a>
+								</li>
+								<!--<li class="divider"></li>-->
+								<li>
+									<a href="crowdfunding.html"><span style="color: #CCCCCC; " class="	glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="frontpanel">
+			<h1 class="panel-title">{{ item.name }}</h1>
+			<div class="frontpanel-container">
+				<img src="{{ item.later_image }}" class="fl panelimg img-responsive" />
+				<div class="main-status fr">
+					<div class="status_message">
+						<p type="text" class="preproject btn-success fl">目标</p><span class="fl" style="color: #ff2626;">
+							{{ item.target_money }}&nbsp;&nbsp;
+						</span> <span class="fl">元</span>
+						<p type="text" class="preproject btn-danger fl">已筹</p>
+						<span class="fl">{{ item.now_money }}&nbsp;&nbsp;元</span>
+						<p type="text" class="preproject btn-success fl">浏览</p> <span class="fl">{{ item.see_num }}&nbsp;&nbsp;次</span>
+					</div>
+
+					<div class="progress_bar " data-perc={{ percent }}>
+						<div class="progress_barleft" style="width:{{ percent }}%;">
+						</div>
+						<div class="percent-1" class="fl" style="left: {{ percent }}%;">{{ percent }}%</div>
+
+					</div>
+					<p class="timevlue fl">
+						<span class=" timespan">时间&nbsp;&nbsp;</span>
+						<span> {{ item.time_begin }}&nbsp;至&nbsp;{{ item.time_out }}</span>
+					</p>
+				</div>
+
+				<div class="donate_place fr">
+					<p>捐出一份爱心，托起一份希望。</p>
+					<div class="donate_here fl">
+						<p id="tody-help">
+						今日帮助人数 {{ item.people_num }} 人
+					</p>
+						
+                        <form method="post">
+								<span>
+								金额
+							</span>
+                            <input type="text" name="money" id="btn" value="" />&nbsp;元
+						<button type="submit" class="btn btn-success" class="fr" id="donatebtn">我要捐款</button>
+                            {% csrf_token %}
+                        </form>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<div class="maintain-panel">
+
+			<ul id="myTab" class="nav nav-tabs">
+				<li class="active">
+					<a href="#project-introduce" data-toggle="tab">
+						项目介绍
+					</a>
+				</li>
+				<li>
+					<a href="#advance" data-toggle="tab">项目进展</a>
+				</li>
+
+			</ul>
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="project-introduce">
+
+					{{ item.introduce }}
+
+				</div>
+				<div class="tab-pane fade "  style="position:absolute; height:600px; overflow:auto" id="advance">
+					<ul class="cbp_tmtimeline">
+                        {% for deve in develoment %}
+						<li>
+							<time class="cbp_tmtime"><span>{{ deve.date }}</span> <span>{{ deve.year }}</span></time>
+							<div class="cbp_tmicon"></div>
+							<div class="cbp_tmlabel" data-scroll-reveal="enter right over 1s" data-scroll-reveal-id="3" style="-webkit-transform: translatex(24px);transform: translatex(24px);opacity: 1;-webkit-transition: -webkit-transform 1s ease-in-out 0s,  opacity 1s ease-in-out 0s;transition: transform 1s ease-in-out 0s,  opacity 1s ease-in-out 0s;-webkit-perspective: 1000;-webkit-backface-visibility: hidden;" data-scroll-reveal-initialized="true">
+								<img class="img-responsive fl" src={{ deve.image }}/>
+
+								<strong>{{ deve.title }}</strong>
+								<p>{{ deve.introduce }}</p>
+
+							</div>
+						</li>
+						{% endfor %}
+
+					</ul>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="box2"  >
+			<div class="last">
+				<div class="left-box">
+					<h2>关于我们</h2>
+					<p>网站首页 意见反馈</p>
+					<p>视频投稿 内容招募</p>
+					<p>讲师招聘 联系我们</p>
+				</div>
+				<div class="middle-box" >
+					<h2><img  width="20px" height="20px"  src="../static/img/logo.png"/>成长加油站</h2>
+					<p>孩子们在线学习的任意门，</p>
+					<p>让成长在快乐中补充能量，</p>
+					<p>帮助孩子实现梦想！</p>
+				</div>
+				<div class="right-box">
+					<h2>关注我们</h2>
+					<div class="top-picture">
+						<!--<img src="img/weixin.png" width="20px" height="20px" />--></div>
+					<div class="bottom-picture">
+						<!--<img src="img/blog.png" width="20px" height="20px" />--></div>
+				</div>
+			<p class="end">Copyright@2016v.tyut.edu.cn.ALL Rights Reserved</p>
+			</div>
+			
+		</div>
+		
+		<!-- jQuery (Bootstrap 插件需要引入) -->
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<!-- 包含了所有编译插件 -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!--<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>-->
+	</body>
+
+</html>

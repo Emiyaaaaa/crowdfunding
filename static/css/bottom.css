@@ -1,0 +1,90 @@
+
+.box2 {
+	background-color: #404339;
+	height: 220px;
+	width: 100%;
+	margin-bottom: 0;
+	position: relative;
+	transform: translateY(100px);
+	
+	
+}
+
+.box2 h2 {
+	color: white;
+	font-size: 18px !important;
+}
+
+.box2 p {
+	
+	font-size: 14px !important;
+	color: #a2a99f;
+}
+
+.box2 .last {
+	position: absolute;
+	display: block;
+	width: 66%;
+	height: 200px;
+	margin: auto;
+	text-align: left; 
+	margin-left: 20%;
+}
+
+.box2 .last .left-box {
+	margin-top: 24px;
+	width: 30%;
+	float: left;
+}
+
+.box2 .last .middle-box {
+	width: 30%;
+	float: left;
+	margin: 0 10%;
+	margin-top: 24px;
+}
+
+.box2 .last .right-box {
+	display: block;
+	float: left;
+	margin-top: 24px;
+	margin-left: 30px;
+}
+
+.box2 .last .right-box img:hover {
+	opacity: 0.2;
+}
+
+
+.top-picture{
+	width: 22px;
+	height: 22px;
+	background: url(../img/blog.png) no-repeat;
+	background-size: 100% 100%;
+	margin-top: 15px;
+	margin-left: 20%;
+}
+.bottom-picture{
+	width: 22px;
+	height: 22px;
+	background: url(../img/weixin.png) no-repeat;
+	background-size: 100% 100%;
+	margin-top: 15px;
+	margin-left: 20%;
+}
+.top-picture:hover{
+	background: url(../img/bloghover.png) no-repeat;
+	background-size: 100% 100%;
+}
+.bottom-picture:hover{
+	background: url(../img/weixinhover.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.end {
+	color: #a2a99f;
+	text-align: center;
+	margin-top: 20%;
+	
+/*	transform: translateY(-20px);*/
+}

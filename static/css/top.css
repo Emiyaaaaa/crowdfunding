@@ -1,0 +1,141 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	border: 0;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+li {
+	list-style: none !important;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.navbar_header .navbar_logo img {
+	float: left;
+	margin: 20px 100px;
+}
+
+.navbar_header .navbar_logo .navbar_list li {
+	display: inline-block;
+	float: right;
+	padding: 50px 35px;
+}
+
+.navbar_header .navbar_logo .navbar_list li a {
+	color: white;
+	font-size: 18px !important;
+}
+
+.navbar_header .navbar_logo .navbar_list .list1 {
+	margin-right: 80px;
+}
+
+.navbar {
+	position: absolute;
+	background: 0;
+	z-index: 1;
+	width: 100%;
+}
+
+.top_video {
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+}
+
+.top_video video {
+	display: block;
+	min-height: 100%;
+	min-width: 100%;
+	max-width: none;
+	height: auto;
+	width: auto;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	bottom: auto;
+	right: auto;
+	filter: brightness(55%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.top_middle {
+	position: absolute;
+	background: 0;
+	z-index: 1;
+	width: 100%;
+	top: 220px
+}
+
+.top_middle .theme {
+	display: block;
+	text-align: center;
+	color: white;
+	font-size: 65px !important;
+}
+
+.top_middle .underline {
+	background-color: green;
+	width: 80px;
+	position: absolute;
+	height: 3px;
+	top: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
+
+.top_middle .solgan {
+	display: block;
+	text-align: center;
+	color: white;
+	font-size: 22px !important;
+	margin-top: 20px;
+}
+
+.top_bottom {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 1;
+	width: 100%;
+	bottom: 0;
+}
+
+.top_bottom h2{
+	display: block;
+	width: 200px !important;
+	color: white;
+	text-align: center;
+}
+.top_bottom h4{
+	display: block;
+	width: 200px !important;
+	color: white;
+	text-align: center;
+	font-weight: 100 !important;
+}
+.top_bottom .box_1,
+.box_2,
+.box_3,
+.box_4 {
+	margin: 2.2% 3.7%;
+	float: left;
+}
+
+.top_bottom .box_1 {
+	margin-left: 9%;
+}

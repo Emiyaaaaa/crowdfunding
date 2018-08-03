@@ -29,9 +29,9 @@ SECRET_KEY = '*wu6y7qk55-gv*cjy%t=jv*+^dx@s+$#o^u-625ud3cr!0#dy%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-
+AUTH_USER_MODEL = "userinfo.UserMessage"
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,11 +41,26 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admindocs',
     'userinfo',
-    'note',
-    'send_email'
+    'crispy_forms',
+    'xadmin',
+    'captcha',
+    'donate',
+    'news',
+    'DjangoUeditor'
 ]
 
+# MIDDLEWARE_CLASSES = [
+#     'django.middleware.security.SecurityMiddleware',
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.middleware.common.CommonMiddleware',
+#     'django.middleware.csrf.CsrfViewMiddleware',
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+# ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -80,11 +95,12 @@ WSGI_APPLICATION = 'txy.wsgi.application'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),os.path.join(BASE_DIR, 'media')]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
@@ -95,23 +111,14 @@ CKEDITOR_CONFIGS = {
 }
 CKEDITOR_UPLOAD_PATH = "/uploads/"
 CKEDITOR_JQUERY_URL = 'https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js'
+
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'lose4578',
-#         'USER': "lose4578",
-#         'PASSWORD': "lose4578",
-#         'HOST': "db4free.net",
-#         'PORT': 3307
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 't1',
+        'NAME': 'crowdfunding',
         'USER': "root",
         'PASSWORD': "1234",
         'HOST': "127.0.0.1",
@@ -151,11 +158,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
-
-
-EMAIL_HOST = "smtp.163.com"
-EMAIL_PORT = 25
-EMAIL_HOST_USER = "yxl2914034404@163.com"
-EMAIL_HOST_PASSWORD = "2800520lhz"
-EMAIL_USE_TLS = True
-EMAIL_FROM = EMAIL_HOST_USER

@@ -1,0 +1,136 @@
+*{margin:0;padding: 0;box-sizing: border-box; font-family: "微软雅黑";}
+li{list-style-type: none;}
+a{text-decoration: none; color: #333;}
+h1{
+	font-size: 32px;
+	font-weight: 100;
+}
+html{
+	margin:0;padding: 0;
+}
+/*预定义样式*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.my_project{
+	display: block;
+	width: auto;
+	height: 1100px;
+	position: relative;
+	background-color: #eef8f6;
+	bottom: 0;
+}
+.project_following{
+	position: absolute;
+	margin: 0px 200px;
+	transform: translateY(60px);
+}
+.projecttitle{
+	width: 200px;
+	height: 60px;
+	
+}
+.projecttitle img{
+	float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+.line{
+	display: block;
+	width: 65px;
+	height: 4px;
+	margin-left: 100px;
+	margin-top: 10px;
+	background-color: rgb(63,174,60);
+}
+.following_box{
+	width: auto;
+	height: 800px;
+}
+.verticle_line{
+	margin-top: 79px;
+	float: left;
+	width: 1px;
+	height: 630px;
+	background-color: #b7acac;
+}
+.box_show{
+	margin-top: 50px;
+	width: 940px;
+	height: 140px;
+	margin-bottom: 70px;
+	position: relative;
+
+}
+.box_show span{
+	display: block;
+	border-bottom: 1px solid #B7ACAC;
+	position: absolute;
+	margin-top: 60px;
+}
+.box_contain{
+	width: 778px;
+	height: 140px;
+	box-shadow: 0 4px 6px rgba(50,50,50,.2);
+	background-color: #f2faf8;
+	
+}
+.box_show:hover{
+	transform: translateY(-5px);
+}
+.box_show:nth-last-child{
+	margin-bottom: 0px !important;
+}
+.box_contain p:first-child{
+	margin: 10px 50px;
+	font-size: 22px;
+	font-weight: 300;
+}
+.box_contain p:nth-child(2){
+	margin: 0px 50px;
+	font-size: 18px;
+	font-weight: 300;
+}
+.progress_bar{
+	width: 600px;
+    height: 10px;
+    margin-top: 20px;
+    margin-left:50px ;
+    display: inline-block;
+    position: relative;
+    border-radius: 4px;
+     background: #dcdcdc;
+}
+.progress_barleft{
+	
+	height: 100%;
+    top: 0;
+    bottom: 0;
+	position: absolute;
+	box-sizing: border-box;
+    border-radius: 4px;
+    background: #19e95d;
+    left: 0;
+}
+.percent{
+	color: #FFFFFF;
+	position: absolute;
+    width: 45px;
+    height: 25px;
+    background-color: #19e95d;
+    background-image: linear-gradient(to bottom,#19e95d 0,#19e95d 100%);
+    background-repeat: repeat-x;
+    filter: none;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2),0 1px 2px rgba(0,0,0,.05);
+    border: 0 solid transparent;
+	margin-left: -10px;
+    margin-top: -6px;
+    padding: 3px;
+    padding-bottom: 3px;
+	border-radius: 25px;
+	text-align: center;
+}

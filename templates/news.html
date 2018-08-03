@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>童心圆新闻</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0 shrink-to-fit=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<!--<meta name="site" content="童心圆公益众筹平台">
+  		<meta name="Site" content="童心圆公益众筹平台">-->
+
+		<link rel="stylesheet" type="text/css" href="/static/share.min.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/newspaper.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/css/bottom.css" />
+	</head>
+
+	<body>
+    {% csrf_token %}
+		<div class="login_box">
+			<img src="/static/img/登陆背景.jpg" style="transform: translateX(-50%);" />
+			<div class="login_box_contain">
+				<h1>登&nbsp;录</h1>
+				<form class="form-control">
+					<input type="text" class="user" placeholder="请输入用户名" />
+					<input type="password" class="password" placeholder="请输入密码" />
+
+					<button class="btn">登&nbsp;录</button>
+					<a id="forgot" class="fl">忘记密码</a>
+					<a href="" id="newuser" class="fr">新用户注册</a>
+				</form>
+			</div>
+		</div>
+		<div class="login_background"> </div>
+		<!--导航栏-->
+		<div class="header">
+			<div class="header-wrap">
+				<div class="header-left fl">
+					<div class="logo-box fl">
+						<img src="/static/img/童心圆logo.png" />
+					</div>
+					<ul class="fl nav">
+						<li class="fl">
+							<a href="/crowdfunding">首页</a>
+						</li>
+						<li class="fl">
+							<a href="/news" style="color: #31903f;">新闻</a>
+						</li>
+						<li class="fl">
+							<a href="">应用</a>
+						</li>
+						<li class="fl">
+							<a href="">计划</a>
+						</li>
+
+					</ul>
+				</div>
+				<ul class="fr login-box">
+					<li class="fl">
+						<a href="#" class="login">登录</a>
+					</li>
+					<li class="fl">
+						<a href="#">注册</a>
+					</li>
+				</ul>
+				<div class="search fr">
+					<a href="" class="icon-search">
+						<svg class="icon" id="search-icon" aria-hidden="true">
+							<use xlink:href="#icon-fangdajing"></use>
+						</svg>
+					</a>
+					<input type="text" placeholder="搜索项目" id="search" />
+{#					<div class="link">#}
+{#						<a href="news.html">积翠小学</a>#}
+{#					</div>#}
+				</div>
+			</div>
+		</div>
+		<h1 class="news_title">{{ news_title }}</h1>
+		<div class="top_bar">
+			<div class="date_source">
+				<span id="date">{{ news_date }}</span>
+				<span id="source_from">&nbsp;&nbsp;&nbsp;&nbsp;来源：{{ news_source_from }}</span>
+
+			</div>
+
+		</div>
+
+        <div class="article">
+            {% autoescape off %}
+            {{ news_text }}
+            {% endautoescape %}
+        </div>
+		<div class="change_potr">
+			<a href="{{ front_news_path }}" title="{{ front_news_title }}">上一篇</a>
+			<a href="/news">目录</a>
+			<a href="{{ next_news_path }}" title="{{ next_news_title }}">下一篇 </a>
+		</div>
+		<div class="backtoindex">
+			<a href="/crowdfunding" class="returnToIndex fl">返回首页>></a>
+		</div>
+		<div class="share_btn">
+		<span class="fl">分享到&nbsp;:&nbsp;</span>
+			<ol class="fl">
+				<li class="row">
+					<div class="social-share" data-sites="weibo,qq,qzone,tencent,wechat"></div>
+				</li>
+			</ol>
+			
+			<ol class="degreeOfsatisfaction fr">
+
+                <li class="up">
+					<a id="satisfaction-1">
+						<svg class="icon" id="search-icon" aria-hidden="true">
+							<use xlink:href="#icon-manyidu"></use>
+						</svg>
+					</a>
+					<a id="satisfaction-2">
+						<svg class="icon" id="search-icon" aria-hidden="true">
+							<use xlink:href="#icon-manyiduyiban"></use>
+						</svg>
+					</a>
+					<a id="satisfaction-3">
+						<svg class="icon" id="search-icon" aria-hidden="true">
+							<use xlink:href="#icon-manyidu1"></use>
+						</svg>
+					</a>
+				</li>
+			</ol>
+		</div>
+			<div class="box2"  >
+			<div class="last">
+				<div class="left-box">
+					<h2>关于我们</h2>
+					<p>网站首页 意见反馈</p>
+					<p >视频投稿 内容招募</p>
+					<p >讲师招聘 联系我们</p>
+				</div>
+				<div class="middle-box" >
+					<h2><img  width="20px" height="20px"  src="/static/img/logo.png"/>成长加油站</h2>
+					<p>孩子们在线学习的任意门，</p>
+					<p >让成长在快乐中补充能量，</p>
+					<p >帮助孩子实现梦想！</p>
+				</div>
+				<div class="right-box">
+					<h2>关注我们</h2>
+					<div class="top-picture">
+						<!--<img src="img/weixin.png" width="20px" height="20px" />--></div>
+					<div class="bottom-picture">
+						<!--<img src="img/blog.png" width="20px" height="20px" />--></div>
+				</div>
+			<p class="end">Copyright@2016v.tyut.edu.cn.ALL Rights Reserved</p>
+			</div>
+			
+		</div>
+
+
+    {% csrf_token %}
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script>
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+        {#// using jQuery#}
+        {#var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();#}
+        {##}
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+        </script>
+		<script src="/static/js/jquery.share.min.js"></script>
+		<script src="/static/js/login.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/news.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/iconfont.js"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0 shrink-to-fit=no">
+
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>personal</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/personal.css" />
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script src="../static/http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="../static/http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="../static/js/iconfont1.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			@media only screen and (max-width:1000px) {
+				a {
+					font-size: 16px;
+				}
+				.top__bottom li {
+					margin-right: 20%;
+				}
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			var wancheng=document.getElementsByClassName("completeorcheck");
+			var i;
+    		for (i = 0; i < wancheng.length; i++) {
+    			if (wancheng[i].innerHTML== "完成"){
+    			
+    				wancheng[i].style.color = "#00cc26";
+    			}
+        		
+   		 }
+    		$(".remind").click(function(){
+				alert("已提醒后台人员审核，请您耐心等待~")
+			});
+		
+			});
+			
+		</script>
+	</head>
+
+	<body>
+		<div class="check_box">
+			<div class="check_top">
+				<img src="../static/img/待审核.png" alt="" class="chek_img img-responsive fl "/>
+				<h3>待审核</h3>
+			</div>
+			<div class="check_table table-responsive class">
+				<table class="table table-hover text-center">
+					<thead>
+						<tr>
+							<th>申请时间</th>
+							<th>项目类型</th>
+							<th>项目名称</th>
+							<th>项目状态</th>
+						</tr>
+					</thead>
+					<tbody>
+                    {% for audit in audit_projects %}
+
+						<tr>
+							<td>{{ audit.created_at }}</td>
+							<td>{{ audit.proj_class }}</td>
+							<td>{{ audit.name }}</td>
+                            {% if audit.state == 0 %}
+							<td class="completeorcheck">审核中</td>
+                                <td><button type="button"  class="btn btn-danger btn-xs remind">提醒审核</button></td>
+
+                            {% endif %}
+                        {% if audit.state == 2 %}
+                            <td class="completeorcheck">未通过</td>
+                            <td></td>
+                            {% endif %}
+                         <td>
+							<a href="">
+							<svg class="icon" id="xiugai-icon" aria-hidden="true">
+							<use xlink:href="#icon-xiugai"></use>
+							</svg>
+							</a>
+							</td>
+							<td>
+							<a href="http://127.0.0.1:8080/personal/?project_id={{audit.project_id}}">
+							<svg class="icon" id="shanchu-icon" aria-hidden="true">
+							<use xlink:href="#icon-shanchu"></use>
+							</svg>
+							</a>
+
+							</td>
+							<td>
+							
+							</td>
+
+						</tr>
+                    {% endfor %}
+
+					
+					</tbody>
+				</table>
+			</div>
+		<div class="checkperson">
+			<ul class="list-inline">
+				<li><img src="../static/img/发起人/发起人1.png"/><a href="initiator.html">&nbsp;发起人</a></li>
+				<li><img src="../static/img/发起人/发起人2.png"/><a href="">&nbsp;审核员1</a></li>
+				<li class="no-mr"><img src="../static/img/发起人/发起人3.png"/><a href="">&nbsp;审核员2</a></li>
+			</ul>
+			
+		</div>
+			<button type="button" class="btn btn-danger btn-xs returnToLast">返回</button>
+		</div>
+		<div class="check_background"> </div>
+		<div class="top">
+			<div class="top__logo">
+				<img src="../static/img/童心圆logo.png" />
+			</div>
+			<div class="top__user">
+				<img src="../static/img/girl.png" />
+				<div class="user_mes">
+					<p> <span class="username">用户名</span>&nbsp;(ID：16677894) </p>
+
+					<p>签名：我奉献我快乐</p>
+				</div>
+			</div>
+			<div class="top__bottom">
+				<ul>
+					<li>
+						<a href="" class="startproject">发起项目 &nbsp;&nbsp;{{ project_num }}</a>
+					</li>
+					<li>
+						<a href="" class="startproject">我帮助过 &nbsp;&nbsp;{{ help_num }}</a>
+					</li>
+					<li>
+						<a href="#" class="startproject" id="waiting_check">待审核 &nbsp;&nbsp;{{ auid_project_num }}</a>
+					</li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<div class="heartdata">
+			<div class="heart__title">
+				<a href=""><img src="../static/img/red heart.png" /></a>
+				<h3>&nbsp;爱心数据</h3>
+			</div>
+			<div class="heart_contain">
+				<div class="disease">
+					<div class="disease_title">
+						<a href=""><img src="../static/img/疾病.png" /></a>
+						<p>&nbsp;疾病大数据</p>
+					</div>
+					<div class="disease_mes fl">
+						<br />
+						<span>•&nbsp;意外伤害筹款总数</span>
+						<span>&nbsp;10000&nbsp;(&nbsp;元&nbsp;)</span>
+						<br />
+						<br />
+						<span>•&nbsp;疾病筹款总数</span>
+						<span>&nbsp;22326&nbsp;(&nbsp;元&nbsp;)</span>
+					</div>
+					<div class="girl_img fr">
+
+					</div>
+				</div>
+				<div class="disease">
+					<div class="disease_title fr">
+						<a href=""><img style="margin-left: 58%;" src="../static/img/校舍2.png" /></a>
+						<p>&nbsp;上学大数据</p>
+					</div>
+					<div class="disease_mes fr">
+						<br />
+						<span>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;搭建校舍总数</span>
+						<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10000&nbsp;(&nbsp;座&nbsp;)</span>
+						<br />
+						<br />
+
+						<span>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;疾病筹款总数</span>
+						<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22326&nbsp;(&nbsp;元&nbsp;)</span>
+
+					</div>
+					<div style="transform:translate(50%,-20%);" class="girl_img fl">
+
+					</div>
+				</div>
+				<div class="disease">
+					<div class="disease_title">
+						<a href=""><img src="../static/img/今日大数据.png" /></a>
+						<p>&nbsp;今日大数据</p>
+					</div>
+					<div class="disease_mes fl">
+						<br />
+						<span>•&nbsp;参与爱心帮助人数</span>
+						<span>&nbsp;10000&nbsp;(&nbsp;个&nbsp;)</span>
+						<br />
+						<br />
+						<span>•&nbsp;获得帮助项目数</span>
+						<span>&nbsp;22326&nbsp;(&nbsp;个&nbsp;)</span>
+						<br />
+						<br />
+						<span>•&nbsp;获得帮助留守儿童人数</span>
+						<span>&nbsp;22326&nbsp;(&nbsp;个&nbsp;)</span>
+						<br /><br />
+						<span>•&nbsp;更多</span>
+					</div>
+					<div class="girl_img fr">
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="my_project">
+			<div class="projecttitle">
+				<a href=""><img src="../static/img/项目 .png" /></a>
+				<h3>&nbsp;项目跟踪</h3>
+				<div class="line">
+				</div>
+			</div>
+			<div class="project_following">
+
+				<div class="following_box">
+					<div class="verticle_line">
+
+					</div>
+                    {% for item,percent in all %}
+					<div class="box_show">
+						<span class="time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.time_begin }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<a href="/oncedonate/?project_id={{item.project_id}}">
+							<div class="box_contain fr">
+								<p>{{ item.name }}</p>
+								<p>{{ item.introduce }}</p>
+								<div class="progress_bar" data-perc="percent">
+									<div class="progress_barleft" style="width:{{ percent }}%;">
+									</div>
+
+                                </div>
+							</div>
+						</a>
+					</div>
+                    {% endfor %}
+                <div class="box_show">
+						<span class="time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<div class="box_contain fr">
+							<p>更多...</p>
+
+				</div>
+			</div>
+
+		</div>
+			<div class="box2"  >
+			<div class="last">
+				<div class="left-box">
+					<h2>关于我们</h2>
+					<p class="pb">网站首页 意见反馈</p>
+					<p class="pb">视频投稿 内容招募</p>
+					<p class="pb">讲师招聘 联系我们</p>
+				</div>
+				<div class="middle-box" >
+					<h2><img  width="20px" height="20px"  src="../static/img/logo.png"/>成长加油站</h2>
+					<p class="pb">孩子们在线学习的任意门，</p>
+					<p class="pb">让成长在快乐中补充能量，</p>
+					<p class="pb">帮助孩子实现梦想！</p>
+				</div>
+				<div class="right-box">
+					<h2>关注我们</h2>
+					<div class="top-picture">
+						<!--<img src="img/weixin.png" width="20px" height="20px" />--></div>
+					<div class="bottom-picture">
+						<!--<img src="img/blog.png" width="20px" height="20px" />--></div>
+				</div>
+			<p class="end">Copyright@2016v.tyut.edu.cn.ALL Rights Reserved</p>
+			</div>
+			
+		</div>
+		<script src="../static/js/jquery-3.2.1.js"></script>
+		<script src="../static/js/volunteer.js" type="text/javascript" charset="utf-8"></script>
+		</body>
+
+</html>

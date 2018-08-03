@@ -1,0 +1,115 @@
+body{
+	background-color: #f2f9f2;
+}
+h1{
+	font-size: 45px;
+	text-align: center;
+	color: dimgrey;
+	font-weight: 300;
+}
+#form{
+	width: 500px;
+	margin: 25px auto 0 auto;
+}
+.lable{
+	font-size: 20px;
+	color: #444a44;
+}
+.textbox{
+	margin-left: 15px;
+	width: 350px;
+	height: 35px;
+	font-size: 18px;
+	border-color: #ccc;
+	border-radius: 3px;
+	border: 1px solid;
+}
+.box{
+	padding-top: 20px;
+}
+#box-gender input[type=radio] {
+	width: 15px;
+	height: 15px;
+}
+.radio-group {
+	display: inline-block;
+	margin-left: 70px;
+}
+.radio-group span{
+	font-size: 20px;
+}
+.radio-group .woman{
+	display: inline-block;
+	margin-left: 90px;
+}
+.id_pass{
+	border-bottom: none; 
+	border-left: none;
+	 border-right: none;
+	 border-top: 1px dotted;
+	 margin-top: 25px;
+	 color: grey;
+	 width: 800px;
+	 margin: auto;
+}
+.box_id{
+	display: block;
+	float: left;
+	width: 370px; 
+	height: 220px; 
+}
+.id_pass span{
+	font-size: 30px;
+}
+#box_idcard{
+	width: 800px;
+	margin: 20px auto 0 auto;
+}
+#box_front{
+	background-image: url(../img/身份证正面.jpg);
+	 background-repeat:no-repeat;
+	 background-size:100% 100%;
+	 -moz-background-size:100% 100%;
+}
+#front{
+	display: block;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+#box_reverse{
+	background-image: url(../img/身份证反面.jpg);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;
+	margin-left: 50px
+}
+#reverse{
+	display: block;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+#box-agree{
+	text-align: center;
+	margin-top: 20px;
+}
+#box-agree input[type=checkbox]{
+	width: 15px;
+	height: 15px;
+}
+#box-agree label,span,a{
+	font-size: 15px;
+}
+#button-submit{
+	display: block;
+	margin-top: 30px;
+	margin: 30px auto 30px auto;
+	width: 300px;
+	height: 50px;
+	border: 1px solid;
+	border-radius: 2px;
+	background-color: #00D300;
+	color: white;
+	font-size: 25px;
+}
