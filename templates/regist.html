@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>童心圆账号注册</title>
+        <link rel="icon" type="image/png" href="{% static 'img/heart.png' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/regist.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bottom.css' %}"/>
+	</head>
+	<body>
+
+		<div id="regForm">
+		  
+		  	
+        	<h1>欢迎注册童心圆</h1>
+        	<form id="regist_form" method="post"  autocomplete="off">
+                <div class="item_1">
+                    <input class="input-text" name="username" value="{{ auto_input_username }}" placeholder="用户名（必填）">
+                    <span class="error-tip" style="color: red">{{ username_error}}</span>
+                </div>
+                <div class="item">
+                    <input class="input-text" name="password" type = "password" value="{{ auto_input_password }}" placeholder="密码（必填）">
+                    <span class="error-tip" style="color: red">{{ password_error }}</span>
+                </div>
+                <div class="item">
+                    <input class="input-text" name="confirm_password" type="password" value="{{ auto_input_confirm_password }}" placeholder="确认密码（必填）">
+                    <span class="error-tip" style="color: red">{{ confirm_password_error }}</span>
+                </div>
+                <div class="item">
+                    <input class="input-text" name="user_realname" value="{{ auto_input_user_realname }}" placeholder="真实姓名（必填）">
+                    <span class="error-tip" style="color: red">{{ user_realname_error }}</span>
+                </div>
+                <div class="item">
+                    <input class="input-text" name="user_email" maxlength="100" value="{{ auto_input_user_email }}" placeholder="邮箱（必填）">
+                    <span class="error-tip" style="color: red">{{ user_email_error }}</span>
+                </div>
+                <div class="item">
+                    <input class="input-text" name="user_id_card_number" maxlength="100" value="{{ auto_input_user_id_card_number }}" placeholder="身份证号（必填）">
+                    <span class="error-tip" style="color: red">{{ user_id_card_number_error }}</span>
+                </div>
+                <div class="item">
+                    <input class="input-text" name="user_mobile" value="{{ auto_input_user_mobile }}" placeholder="联系电话（必填）">
+                    <span class="error-tip" style="color: red">{{ user_mobile_error }}</span>
+                </div>
+                <div class="item" >
+                    <input class="input-text" name="user_qq" value="{{ auto_input_user_qq }}" placeholder="联系QQ（必填）">
+                    <span class="error-tip" style="color: red">{{ user_qq_error }}</span>
+                </div>
+                <div class="item">
+                    <input class="input-text" name="user_home_adress" value="{{ auto_input_user_home_adress }}" placeholder="家庭住址（必填）">
+                    <span class="error-tip" style="color: red">{{ user_home_adress_error }}</span>
+                </div>
+                <div class="item" >
+                    <input class="input-text" name="user_company_name" value="{{ auto_input_user_company_name }}" placeholder="单位名称（必填）">
+                    <span class="error-tip" style="color: red">{{ user_company_name_error }}</span>
+                </div>
+
+                <div class="item_other" >
+                    <div >
+                        <input class="input-text-other" name="captcha" placeholder="请输入验证码（必填）">
+                    </div>
+                    <span class="error-tip" style="color: red">{{ captcha_error }}</span>
+                </div>
+                <div class="item_other right" >
+                    <div >
+                        <div class="captcha-img">
+                               <img src="{% static 'captcha.jpg' %}"  width="130px" height="40px">
+                                <div class="cover">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="box-agree" class="box-agree">
+                    <input type="checkbox" id="agreeRule" name="agree_rule" value="" />
+                    <label  for="agreeRule">我已阅读并同意</label>
+                    <a class="use" id="id-user" href="#" data-toggle="modal" data-target="#useModal">《使用条款》</a><span>
+                        及
+                    </span>
+                    <a class="commitment" id="id-commitment" href="#" data-toggle="modal" data-target="#commitmentModal">《发起人使用书》</a>
+                </div>
+                <button class="btn" tpye = "submit" id="button-submit">提交</button>
+                {% csrf_token %}
+   			 </form>
+   			 </div>
+      
+<!-- 模态框（Modal） -->
+		<div class="modal fade" id="useModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="false">
+					&times;
+				</button>
+						<h4 class="modal-title" id="myModalLabel">
+					使用条款
+				</h4>
+					</div>
+					<div class="modal-body">
+						我是条款
+						<br/> 是的。。。
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="commitmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="false">
+					&times;
+				</button>
+						<h4 class="modal-title" id="myModalLabel1">
+					发起人使用书
+				</h4>
+					</div>
+					<div class="modal-body">
+						我是发起人使用书
+						<br/> 是的。。。
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content c1">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="false">
+					&times;
+				</button>
+						<h4 class="modal-title" id="myModalLabel1">
+					提示
+				</h4>
+					</div>
+					<div class="modal-body">
+						注册成功，后台正在审核！
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript">
+		function doSubmit() {
+			$('#submitModal').modal({});
+
+			setTimeout(function() {
+				$('#submitModal').modal('hide');
+			}, 3000);
+		}
+	</script>
+</body>
+</html>

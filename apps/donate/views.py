@@ -14,6 +14,7 @@ import time
 from django.conf import settings
 from django.contrib import messages
 import os
+import re
 # Create your views here.
 
 class CrowdFundingDisplay(View):

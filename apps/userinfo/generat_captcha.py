@@ -18,7 +18,7 @@ def gen_captcha_text_and_image():
     image = ImageCaptcha()
     captcha_text = random_captcha_text()
     captcha_text = ''.join(captcha_text)
-    print(captcha_text)
+    # print(captcha_text)
     image.write(captcha_text, os.path.join(settings.STATICFILES_DIRS[0], 'captcha.jpg'))  # 写到文件
     return captcha_text
 

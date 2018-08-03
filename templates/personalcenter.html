@@ -1,0 +1,423 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+		<link rel="icon" type="image/png" href="{% static 'img/heart.png' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/personalcenter.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bottom.css' %}"/>
+		<title>个人中心</title>
+
+	</head>
+
+	<body>
+		<div class="check_box">
+			<div class="check_top">
+				<img src="{% static 'img/待审核.png' %}" alt="" class="chek_img img-responsive fl " />
+				<h3>待审核</h3>
+			</div>
+			<div class="check_table table-responsive class">
+				<table class="table table-hover text-center">
+					<thead>
+						<tr>
+							<th>申请时间</th>
+							<th>项目类型</th>
+							<th>项目名称</th>
+							<th>项目状态</th>
+						</tr>
+                    </thead>
+					<tbody>
+                    {% for audit in audit_projects %}
+
+						<tr>
+							<td>{{ audit.created_at }}</td>
+							<td>{{ audit.proj_class }}</td>
+							<td>{{ audit.name }}</td>
+                            {% if audit.state == 0 %}
+							<td class="completeorcheck">审核中</td>
+                                <td><button type="button"  class="btn btn-danger btn-xs remind">提醒审核</button></td>
+
+                            {% endif %}
+                        {% if audit.state == 2 %}
+                            <td class="completeorcheck">未通过</td>
+                            <td></td>
+                            {% endif %}
+                         <td>
+							<a href="">
+							<svg class="icon" id="xiugai-icon" aria-hidden="true">
+							<use xlink:href="#icon-xiugai"></use>
+							</svg>
+							</a>
+							</td>
+							<td>
+							<a href="http://127.0.0.1:8080/personal/?project_id={{audit.project_id}}">
+							<svg class="icon" id="shanchu-icon" aria-hidden="true">
+							<use xlink:href="#icon-shanchu"></use>
+							</svg>
+							</a>
+
+							</td>
+							<td>
+
+							</td>
+
+						</tr>
+                    {% endfor %}
+
+					</tbody>
+				</table>
+			</div>
+			<div class="checkperson">
+				<ul class="list-inline">
+					<li><img class="img-responsive" src="img/发起人/发起人1.png" />
+						<a href="initiator.html">&nbsp;发起人</a>
+					</li>
+					<li><img class="img-responsive" src="img/发起人/发起人2.png" />
+						<a href="">&nbsp;审核员1</a>
+					</li>
+					<li class="no-mr"><img class="img-responsive" src="img/发起人/发起人3.png" />
+						<a href="">&nbsp;审核员2</a>
+					</li>
+				</ul>
+
+			</div>
+			<button type="button" class="btn btn-danger btn-xs returnToLast">返回</button>
+		</div>
+		<div class="check_background"> </div>
+
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<img class="img-responsive" src="../static/img/童心圆logo.png" width="110" height="100" />
+				</div>
+				<div id="nav-down">
+					<ul class="nav navbar-nav navbar-left mynavbar">
+						<li>
+							<a href="crowdfunding.html">首页</a>
+						</li>
+						<li>
+							<a href="news.html">新闻</a>
+						</li>
+						<li>
+							<a href="#">应用</a>
+						</li>
+
+					</ul>
+					<ul class="nav navbar-nav navbar-right mynavbar">
+						<li class="head_portrait">
+							<img width="32" height="32" class="img-responsive" id="rockImg" src="../media/{{ user_hand_portrait }}" />
+						</li>
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								{{ username }}
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="personalcenter.html"><span style="color: #CCCCCC; " class="glyphicon glyphicon-home"></span>&nbsp;个人中心</a>
+								</li>
+								<li>
+									<a href="#"><span style="color: #CCCCCC; " class="glyphicon glyphicon-cog"></span>&nbsp;设置</a>
+								</li>
+								<!--<li class="divider"></li>-->
+								<li>
+									<a href="{% url 'crowdfunding'%}"><span style="color: #CCCCCC; " class="	glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="personal-banner">
+			<img class="img-responsive" src="../media/{{ user_hand_portrait }}" />
+			<div class="user_mes fl">
+				<p> <span class="username">{{ username }}</span></p>
+				<p>{{ user_signature }}</p>
+			</div>
+		</div>
+		<div class="personer_container">
+			<ul class="nav nav-pills nav-stacked verticalnav fl" role="tablist">
+				<li  class="active">
+					<i></i>
+					<a href="#myproject" data-toggle="pill"><span style="color: #CCCCCC; " class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;我的项目</a>
+				</li>
+				
+				<li>
+					<a href="#myhelped" data-toggle="pill"><span style="color: #CCCCCC; " class="glyphicon   glyphicon-heart-empty"></span>&nbsp;&nbsp;我帮助过</a>
+				</li>
+				<li>
+					<a href="oncedonate.html"><span style="color: #CCCCCC; " class="glyphicon glyphicon-usd"></span>&nbsp;&nbsp;我要捐助</a>
+				</li>
+				<li>
+					<a href="#"><span style="color: #CCCCCC; " class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;月捐计划</a>
+				</li>
+				<li>
+					<a href="#"><span style="color: #CCCCCC; " class="glyphicon glyphicon-magnet"></span>&nbsp;&nbsp;一对一帮扶</a>
+				</li>
+				<li>
+					<a href="#personal_setting" data-toggle="pill"><span style="color: #CCCCCC; " class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a>
+				</li>
+			</ul>
+			<div id="myTabContent" class="verticalnavContent tab-content fl center-block">
+				<div class="tab-pane fade  in active" id="myproject">
+					<ul id="myTab1" class="nav nav-pills">
+						<li class="active">
+							<a href="#project-following" data-toggle="tab">
+								项目跟踪
+							</a>
+						</li>
+						<li>
+					
+							<a href="#" class="startproject" id="waiting_check">待审核 </a>
+						</li>
+
+					</ul>
+					<div id="myTabContent1" class="tab-content horizon_myprojects">
+						<div class="project_following  tab-pane fade in active " id="project-following">
+
+							<div class="following_box">
+								<div class="verticle_line">
+
+								</div>
+								{% for item,percent in all %}
+								<div class="box_show">
+									<span class="time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.time_begin }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									<a href="/oncedonate/?project_id={{item.project_id}}">
+										<div class="box_contain fr">
+											<p>{{ item.name }}</p>
+											<p>{{ item.introduce }}</p>
+											<div class="progress_bar" data-perc={{ percent }}>
+												<div class="progress_barleft" style="width:{{ percent }}%;">
+												</div>
+												<div class="percent-1" class="fl" style="left: {{ percent }}%;">{{ percent }}%</div>
+
+											</div>
+										</div>
+									</a>
+								</div>
+                                {% endfor %}
+
+								<div class="box_show">
+									<span class="time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									<div class="box_contain fr">
+										<p>更多...</p>
+								
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane fade " id="waiting_check">
+
+						</div>
+
+					</div>
+
+				</div>
+				<div class="tab-pane fade" id="myhelped">
+					<p>这里是我帮助过</p>
+				</div>
+				<div class="tab-pane fade" id="personal_setting">
+					<ul id="myTab2" class="nav nav-pills">
+						<li class="active">
+							<a href="#personal_mess" class="col-sm-8" data-toggle="tab">
+								个人信息
+							</a>
+						</li>
+						<li>
+							<a href="#head_portrait" class="col-sm-8" data-toggle="tab">头像 </a>
+						</li>
+						<li class="fr">
+							<a href="#othersetting" class="col-sm-8" data-toggle="tab">其他</a>
+						</li>
+					</ul>
+					<div id="myTabContent2" class="tab-content">
+						<div class="tab-pane fade  in active" id="personal_mess">
+							<form class="form-horizontal" method="post" role="form">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">用户名</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control short-textbox" name="username" value="{{ username }}" placeholder="请输入名字">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class=" col-sm-2 control-label">性别</label>
+									<label class="radio-inline col-lg-2 on" >
+		                                <input type="radio" name="user_gender" value="male" class="radio" checked>男
+	                                </label>
+									<label class="radio-inline col-lg-2 label0">
+                                        {% if user_gender == "female" %}
+                                            <input type="radio" name="user_gender" value="female" checked> 女
+                                        {% else %}
+                                            <input type="radio" name="user_gender" value="female" > 女
+                                        {% endif %}
+	                                </label>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">签名</label>
+									<div class="col-sm-8">
+									<textarea class="col-sm-2 form-control" rows="3" name = "user_signature" placeholder="让爱传递。">{{ user_signature }}</textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">手机</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" name="user_mobile" value="{{ user_mobile }}" placeholder="请输入11位手机号">
+									</div>
+
+								</div>
+
+								<div class="form-group">
+									<div class="col-sm-offset-1 col-sm-10">
+										<button type="submit" class="btn saveb">保存</button>
+									</div>
+								</div>
+                            {% csrf_token %}
+							</form>
+
+						</div>
+						<div class="tab-pane fade " id="head_portrait">
+							<form class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
+					
+							<div class="form-group">
+							<input id="lefile"  name="user_hand_portrait" type="file" style="display:none">
+							<div class="input-append">  
+    						
+    						<a class="btn input-btn" onclick="$('input[id=lefile]').click();">上传头像</a>
+    						<label>支持.jpg .png</label>
+    						<input id="photoCover" class="input-large" type="text" style="height:30px;">
+							</div> 
+							<div class="preimg">
+								 <img src="" id="img0" width="150" height="150" class="hide">
+								 
+							</div>
+							<label class="preimglabel fl">预览图</label>
+							</div>
+							<div class="form-group">
+									<div class="col-sm-offset-1 col-sm-10">
+										<button type="submit" class="btn  saveb">保存</button>
+									</div>
+							</div>
+                            {% csrf_token %}
+							</form>
+							
+               				
+							
+						</div>
+						<div class="tab-pane fade" id="othersetting"></div>
+					</div>
+				</div>
+			</div>
+			<div class="contact_block fl" id="myproject">
+				<p>聚沙成塔，集腋成裘。</p>
+				<p align="left">我们会倾众人之力，为您解忧。如果您遇到了无法解决的困难，请</p>
+				<p>
+					<a href="#">发起项目</a>
+					，为孩子们的成长助力。
+				<span style="color: #BABABA; " class="glyphicon glyphicon-earphone">  15834106565</span>
+				</p>
+
+			</div>
+		</div>
+			<div class="box2"  >
+			<div class="last">
+				<div class="left-box">
+					<h2>关于我们</h2>
+					<p>网站首页 意见反馈</p>
+					<p>视频投稿 内容招募</p>
+					<p>讲师招聘 联系我们</p>
+				</div>
+				<div class="middle-box" >
+					<h2><img  width="20px" height="20px"  src="{% static 'img/logo.png' %}"/>成长加油站</h2>
+					<p>孩子们在线学习的任意门，</p>
+					<p>让成长在快乐中补充能量，</p>
+					<p>帮助孩子实现梦想！</p>
+				</div>
+				<div class="right-box">
+					<h2>关注我们</h2>
+					<div class="top-picture">
+						<!--<img src="{% static 'img/weixin.png' %}" width="20px" height="20px" />--></div>
+					<div class="bottom-picture">
+						<!--<img src="{% static 'img/blog.png' %}" width="20px" height="20px" />--></div>
+				</div>
+			<p class="end">Copyright@2016v.tyut.edu.cn.ALL Rights Reserved</p>
+			</div>
+			
+		</div>
+		<script src="{% static 'js/jquery-3.2.1.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/iconfont1.js' %}" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var wancheng = document.getElementsByClassName("completeorcheck");
+				var i;
+				for(i = 0; i < wancheng.length; i++) {
+					if(wancheng[i].innerHTML == "完成") {
+
+						wancheng[i].style.color = "#00cc26";
+					}
+
+				}
+				$(".remind").click(function() {
+					alert("已提醒后台人员审核，请您耐心等待~")
+				});
+				 
+				$("#waiting_check").click(function() {
+					$(".check_box").css("display", "block");
+					$(".check_background").css("display", "block");
+				});
+				$(".returnToLast").click(function() {
+					$(".check_box").css("display", "none");
+					$(".check_background").css("display", "none");
+				});
+				$(".personal-banner").click(function () {
+          			$("nav").css("display","block");
+       			});
+				$('input[id=lefile]').change(function() {  
+					$('#photoCover').val($(this).val());  
+				});  
+				$("#lefile").change(function(){
+					var objUrl = getObjectURL(this.files[0]);
+					console.log("objUrl = "+objUrl) ;
+					if (objUrl) 
+    				{
+     					$("#img0").attr("src", objUrl);
+      					$("#img0").removeClass("hide");
+    				}
+				});
+				function getObjectURL(file){
+					var url=null;
+					  if (window.createObjectURL!=undefined) 
+    				{ // basic
+     					url = window.createObjectURL(file) ;
+   				    }
+    				else if (window.URL!=undefined) 
+   				    {
+                 	 // mozilla(firefox)
+                        url = window.URL.createObjectURL(file) ;
+                    } 
+                    else if (window.webkitURL!=undefined) {
+              		// webkit or chrome
+                   url = window.webkitURL.createObjectURL(file) ;
+                    }
+                   return url ;
+				}
+	    });
+			
+		</script>
+	
+
+	</body>
+
+</html>

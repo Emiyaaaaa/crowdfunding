@@ -70,6 +70,7 @@ class RegisterView(View):
         input_user_home_adress = request.POST.get("user_home_adress")
         input_user_company_name = request.POST.get("user_company_name")
         input_captcha = request.POST.get("captcha")
+        is_agree_rule = request.POST.get("agree_rule")
 
         
         username_list = []
@@ -138,7 +139,7 @@ class RegisterView(View):
         elif re.search("^^(13\d|14[57]|15[^4\D]|17[13678]|18\d)\d{8}|170[^346\D]\d{7}",input_user_mobile) is None:
             regist_error["user_mobile_error"] = "请检查手机号码是否输入正确"
         elif input_user_mobile in user_mobile_list:
-            regist_error["user_mobile_error"] = "此邮箱已被注册"
+            regist_error["user_mobile_error"] = "此手机号码已被注册"
         else:
             auto_input_form["auto_input_user_mobile"] = input_user_mobile
 
@@ -166,6 +167,9 @@ class RegisterView(View):
         elif input_captcha != RegisterView.captcha:
             regist_error["captcha_error"] = "验证码错误"
 
+        if is_agree_rule == None:
+            regist_error["agree_rule_error"] = "未同意条款"
+
         if regist_error != {} :
             auto_input_form_and_regist_error = dict(auto_input_form,**regist_error)
             return self.get(request,auto_input_form_and_regist_error)
@@ -173,18 +177,23 @@ class RegisterView(View):
 
 
         else:#if regist_error == {}
-            UserMessage.objects.create(username = input_username,
-                                       password = input_password,
-                                       user_realname = input_username,
-                                       user_email=input_user_email,
-                                       user_id_card_number=input_user_id_card_number,
-                                       user_mobile=input_user_mobile,
-                                       user_qq=input_user_qq,
-                                       user_home_address=input_user_home_adress,
-                                       user_company_name=input_user_company_name
-                                       )
+            try:
+                UserMessage.objects.create(username = input_username,
+                                           password = input_password,
+                                           user_realname = input_username,
+                                           user_email=input_user_email,
+                                           user_id_card_number=input_user_id_card_number,
+                                           user_mobile=input_user_mobile,
+                                           user_qq=input_user_qq,
+                                           user_home_address=input_user_home_adress,
+                                           user_company_name=input_user_company_name
+                                           )
+                request.session['username'] = input_username
+                login_form = {"logined": "1", "msg": input_username}
+            except:
+                return self.get(request)
 
-            return render(request,'crowdfunding.html',{})
+            return render(request,'crowdfunding.html',login_form)
 
 
 class ModifyMessageView(View):
