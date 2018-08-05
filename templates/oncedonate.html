@@ -57,7 +57,7 @@
 								</li>
 								<!--<li class="divider"></li>-->
 								<li>
-									<a href="{% url 'crowdfunding' %}"><span style="color: #CCCCCC; " class="	glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+									<a href="/crowdfunding/?login_out=1"><span style="color: #CCCCCC; "  class= "	glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
 								</li>
 							</ul>
 						</li>
@@ -68,7 +68,7 @@
 		<div class="frontpanel">
 			<h1 class="panel-title">{{ item.name }}</h1>
 			<div class="frontpanel-container">
-				<img src="{{ item.later_image }}" class="fl panelimg img-responsive" />
+				<img src="/media/{{ item.later_image }}" class="fl panelimg img-responsive" />
 				<div class="main-status fr">
 					<div class="status_message">
 						<p type="text" class="preproject btn-success fl">目标</p><span class="fl" style="color: #ff2626;">

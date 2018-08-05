@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="E:\python\untitled\txy\venv"
+VIRTUAL_ENV="e:\Users\ASUS\PycharmProjects\yundin\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -66,17 +66,7 @@
 {#						<a href="#">注册</a>#}
 {#					</li>#}
 {#				</ul>#}
-				<div class="search fr">
-					<a href="" class="icon-search">
-						<svg class="icon" id="search-icon" aria-hidden="true">
-							<use xlink:href="#icon-fangdajing"></use>
-						</svg>
-					</a>
-					<input type="text" placeholder="搜索项目" id="search" />
-{#					<div class="link">#}
-{#						<a href="news.html">积翠小学</a>#}
-{#					</div>#}
-				</div>
+
 			</div>
 		</div>
 		<h1 class="news_title">{{ news_title }}</h1>
@@ -100,7 +90,7 @@
 			<a href="{{ next_news_path }}" title="{{ next_news_title }}">下一篇 </a>
 		</div>
 		<div class="backtoindex">
-			<a href="/crowdfunding" class="returnToIndex fl">返回首页>></a>
+			<a href="{% url 'crowdfunding' %}" class="returnToIndex fl">返回首页>></a>
 		</div>
 		<div class="share_btn">
 		<span class="fl">分享到&nbsp;:&nbsp;</span>

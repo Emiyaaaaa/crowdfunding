@@ -61,7 +61,8 @@ def news(request,id):
                     next_title = str(next.title)
                 try:
                     username = request.session["username"]
-                    return render(request, 'new_catalog.html', {
+                    user_hand_portrait = UserMessage.objects.get(username=username).user_hand_portrait
+                    return render(request, 'news.html', {
                                                                 'username': username,
                                                                 'news_text': news.text,
                                                                 'news_title': news.title,
@@ -70,13 +71,21 @@ def news(request,id):
                                                                 'front_news_path': front_path,
                                                                 'next_news_path': next_path,
                                                                 'front_news_title': front_title,
-                                                                'next_news_title': next_title
+                                                                'next_news_title': next_title,
+                                                                'user_hand_portrait':user_hand_portrait
                                                                 })
                 except:
                     pass
-                return render(request,'news.html',{'news_text':news.text,'news_title':news.title,'news_date':news.update_at,'news_source_from':news.source_from,
-                                                  'front_news_path':front_path,'next_news_path':next_path,
-                                                   'front_news_title':front_title,'next_news_title':next_title
+                return render(request,'news.html',{'news_text':news.text,
+                                                   'news_title':news.title,
+                                                   'news_date':news.update_at,
+                                                   'news_source_from':news.source_from,
+                                                  'front_news_path':front_path,
+                                                   'next_news_path':next_path,
+                                                   'front_news_title':front_title,
+                                                   'next_news_title':next_title,
+                                                   'username': "未登录",
+                                                   'user_hand_portrait': '../media/user_hand_portrait/default.png'
                                                    })
             else:
                 step += 1
@@ -110,4 +119,7 @@ def news_catalog(request):
     except:
         pass
 
-    return render(request,'new_catalog.html',{'news':content})
+    return render(request,'new_catalog.html',{'news':content,
+                                              'username': "未登录",
+                                              'user_hand_portrait': '../media/user_hand_portrait/default.png'
+                                              })

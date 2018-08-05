@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/txy.iml" filepath="$PROJECT_DIR$/.idea/txy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../txy_test/.idea/txy_test.iml" filepath="$PROJECT_DIR$/../txy_test/.idea/txy_test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../untitled/.idea/untitled.iml" filepath="$PROJECT_DIR$/../untitled/.idea/untitled.iml" />
     </modules>
   </component>
 </project>

@@ -19,83 +19,90 @@ import re
 
 class CrowdFundingDisplay(View):
     def get(self,request,login_form = {}):
-        try:
-            edu = project.objects.filter(proj_class='教育助学',is_display=0,is_delete=1)
-            index = edu.latest("project_id")
-            index = [i for i in range(index.project_id-6,index.project_id+1)]
-            edu1 = project.objects.get(project_id=index[0])
-            edu2 = project.objects.get(project_id=index[1])
-            edu3 = project.objects.get(project_id=index[2])
-            edu4 = project.objects.get(project_id=index[3])
-            edu5 = project.objects.get(project_id=index[4])
-            edu6 = project.objects.get(project_id=index[5])
-            edu7 = project.objects.get(project_id=index[6])
 
-            support = project.objects.filter(proj_class='扶贫助困',is_display=0,is_delete=1)
-            index2 = support.latest("project_id")
-            index2 = [i for i in range(index2.project_id - 6, index2.project_id + 1)]
-            support1 = project.objects.get(project_id=index2[0])
-            support2 = project.objects.get(project_id=index2[1])
-            support3 = project.objects.get(project_id=index2[2])
-            support4 = project.objects.get(project_id=index2[3])
-            support5 = project.objects.get(project_id=index2[4])
-            support6 = project.objects.get(project_id=index2[5])
-            support7 = project.objects.get(project_id=index2[6])
-
-            log_index = Donation_log.objects.latest("Donation_log_id")
-            index3 = [i for i in range(log_index.Donation_log_id-5,log_index.Donation_log_id+1)]
-            log1 = Donation_log.objects.get(Donation_log_id=index3[0])
-            log2 = Donation_log.objects.get(Donation_log_id=index3[1])
-            log3 = Donation_log.objects.get(Donation_log_id=index3[2])
-            log4 = Donation_log.objects.get(Donation_log_id=index3[3])
-            log5 = Donation_log.objects.get(Donation_log_id=index3[4])
-            log6 = Donation_log.objects.get(Donation_log_id=index3[5])
-
-            total_project = project.objects.latest('project_id').project_id
-            total_moneys = project.objects.all()
-            total_money = 0
-            for i in total_moneys:
-                total_money = total_money + i.now_money
-            total_support = log_index.Donation_log_id
-            #新闻
-            publish_news = News.objects.filter(is_publish__icontains='publish')
-            step = 0
-            content = []
-            for news in publish_news:
-                content.append(news)
-                step += 1
-                if step >= 6:
-                    break
-
-            for i in content:
-                timeArray = time.strptime(str(i.update_at).split('.')[0], "%Y-%m-%d %H:%M:%S")
-                timeStamp = int(time.mktime(timeArray))
-                i.update_at = timeStamp
-                i.image = '/media/' + str(i.image)
-
-            for i in range(0, len(content)):
-                for j in range(i + 1, len(content)):
-                    if content[i].created_at <= content[j].created_at:
-                        content[i], content[j] = content[j], content[i]
-            crowdfunding_form = {'edu1':edu1,'edu2':edu2,'edu3':edu3,
-                    'edu4':edu4,'edu5':edu5,'edu6':edu6,'edu7':edu7,
-                    'support1':support1,'support2':support2,'support3':support3,
-                    'support4':support4,'support5':support5,'support6':support6,
-                    'support7':support7,'log1':log1,'log2':log2,'log3':log3,
-                    'log4':log4,'log5':log5,'log6':log6,'tatal_project':total_project,
-                    'total_money':total_money,'total_support':total_support,
-                    'news':content}
+        edu = project.objects.filter(proj_class='教育助学', is_display=0, is_delete=1)
+        index = edu.latest("project_id")
+        index = [i for i in range(index.project_id - 7, index.project_id + 1)]
+        edus = []
+        for i in range(index.__len__())[::-1]:
             try:
-                username = request.session["username"]
-                login_form = {"logined": "1", "msg": username}
+                edu1 = project.objects.get(project_id=index[i])
+                edus.append(edu1)
+            except Exception:
+                pass
+
+        support = project.objects.filter(proj_class='扶贫助困', is_display=0, is_delete=1)
+        index2 = support.latest("project_id")
+        index2 = [i for i in range(index2.project_id - 7, index2.project_id + 1)]
+        supports = []
+
+        for i in range(index2.__len__())[::-1]:
+            try:
+                support1 = project.objects.get(project_id=index2[i])
+                supports.append(support1)
+            except Exception:
+                pass
+
+        log_index = Donation_log.objects.latest("Donation_log_id")
+        index3 = [i for i in range(log_index.Donation_log_id - 5, log_index.Donation_log_id + 1)]
+        logs = []
+
+        for i in range(index3.__len__())[::-1]:
+            try:
+                log = Donation_log.objects.get(Donation_log_id=index3[i])
+                logs.append(log)
+            except Exception:
+                pass
+
+        total_project = project.objects.latest('project_id').project_id
+        total_moneys = project.objects.all()
+        total_money = 0
+        for i in total_moneys:
+            total_money = total_money + i.now_money
+        total_support = log_index.Donation_log_id
+        #新闻
+        publish_news = News.objects.filter(is_publish__icontains='publish')
+        step = 0
+        content = []
+        for news in publish_news:
+            content.append(news)
+            step += 1
+            if step >= 6:
+                break
+
+        for i in content:
+            timeArray = time.strptime(str(i.update_at).split('.')[0], "%Y-%m-%d %H:%M:%S")
+            timeStamp = int(time.mktime(timeArray))
+            i.update_at = timeStamp
+            i.image = '/media/' + str(i.image)
+
+        for i in range(0, len(content)):
+            for j in range(i + 1, len(content)):
+                if content[i].created_at <= content[j].created_at:
+                    content[i], content[j] = content[j], content[i]
+
+        crowdfunding_form = {
+            'supports': supports, 'edus': edus,
+            'logs': logs,
+            'tatal_project': total_project,
+            'total_money': total_money, 'total_support': total_support,
+            'news': content}
+        try:
+            username = request.session["username"]
+            login_form = {"logined": "1", "msg": username}
+        except:
+            pass
+        all_form = dict(crowdfunding_form,**login_form)
+
+        if  request.GET.get('login_out') == '1':
+            try:
+                del request.session['username']
             except:
                 pass
-            all_form = dict(crowdfunding_form,**login_form)
-
-
-            return render(request,'crowdfunding.html',all_form)
-        except Exception:
-            return HttpResponse("请求的页面不存在哦")
+            return HttpResponseRedirect('/crowdfunding')
+        return render(request,'crowdfunding.html',all_form)
+        # except Exception:
+        #     return HttpResponse("请求的页面不存在")
 
     def post(self,request):
         user_name = request.POST.get("username")
@@ -116,10 +123,8 @@ class CrowdFundingDisplay(View):
                 if pw == pass_word:
                     request.session["username"] = user_name
                     login_from = {"logined": "1", "msg": user_name}
-                    return CrowdFundingDisplay.get(self, request, login_from)
                 else:
                     login_from = {"logined": "0", "msg": "密码错误"}
-                    return CrowdFundingDisplay.get(self, request, login_from)
 
             elif email_pw_massage:
                 for email_pw_msg in email_pw_massage:
@@ -127,13 +132,13 @@ class CrowdFundingDisplay(View):
                 if pw == pass_word:
                     request.session["username"] = user_name
                     login_from = {"logined": "1", "msg": user_name}
-                    return CrowdFundingDisplay.get(self, request, login_from)
                 else:
                     login_from = {"logined": "0", "msg": "密码错误"}
-                    return CrowdFundingDisplay.get(self, request, login_from)
             else:
                 login_from = {"logined": "0", "msg": "用户名不存在"}
-                return CrowdFundingDisplay.get(self, request, login_from)
+
+            return CrowdFundingDisplay.get(self, request, login_from)
+
 
 class Donate(View):
 
@@ -141,36 +146,46 @@ class Donate(View):
         Donate.project_id = 2
         Donate.subject = ''
         if len(str(request)) < 100:
+            # try:
+            Donate.project_id = int(request.GET.get("project_id"))
+            item = project.objects.get(project_id=Donate.project_id)
+            develoment = prj_development.objects.filter(name_id=Donate.project_id)
+            percent = '{:.0f}'.format((item.now_money/item.target_money)*100)
+            if int(percent) > 100:
+                percent = '100'
+            project.objects.filter(project_id=Donate.project_id).update(see_num=(item.see_num+1))
+            Donate.subject = item.name
             try:
-                Donate.project_id = int(request.GET.get("project_id"))
-                item = project.objects.get(project_id=Donate.project_id)
-                develoment = prj_development.objects.filter(name_id=Donate.project_id)
-                percent = '{:.0f}'.format((item.now_money/item.target_money)*100)
-                if int(percent) > 100:
-                    percent = '100'
-                project.objects.filter(project_id=Donate.project_id).update(see_num=(item.see_num+1))
-                Donate.subject = item.name
-                try:
 
-                    username = request.session["username"]
-                    user_hand_portrait = UserMessage.objects.get(username = username).user_hand_portrait
-                    return render(request,'oncedonate.html',{'item':item,
-                                                             'develoment':develoment,
-                                                             'percent':percent,
-                                                             'username':username,
-                                                             'user_hand_portrait':user_hand_portrait})
-                except:
-                    return render(request, 'oncedonate.html', {'item': item,
-                                                               'develoment': develoment})
+                username = request.session["username"]
+                user_hand_portrait = UserMessage.objects.get(username = username).user_hand_portrait
+                return render(request,'oncedonate.html',{'item':item,
+                                                         'develoment':develoment,
+                                                         'percent':percent,
+                                                         'username':username,
+                                                         'user_hand_portrait':user_hand_portrait})
+            except:
+                return render(request, 'oncedonate.html', {'item': item,
+                                                           'develoment': develoment,
+                                                           'percent': percent,
+                                                           'username': "未登录",
+                                                           'user_hand_portrait': '../media/user_hand_portrait/default.png'
+                                                           })
 
-            except Exception:
-                return HttpResponse('请求的页面不在哦')
+            # except Exception:
+            #     return HttpResponse('请求的页面不在哦')
         else:
             '''
             更新数据库
             '''
-            username = request.session['username']
-            user_id = UserMessage.objects.get(username=username).id
+            try:
+                username = request.session['username']
+            except Exception:
+                pass
+            try:
+                user_id = UserMessage.objects.get(username=username).id
+            except Exception:
+                user_id = 1
             money_count =  float(request.GET.get("total_amount"))
             project_id = int(request.GET.get("project_id"))
             Donation_log.objects.create(project_id=project_id,Donation_name_id = user_id,donate_money = money_count)
@@ -191,16 +206,28 @@ class Donate(View):
                 percent = '100'
             project.objects.filter(project_id=Donate.project_id).update(see_num=(item.see_num + 1))
             Donate.subject = item.name
+            try:
+                username = request.session["username"]
+                user_hand_portrait = UserMessage.objects.get(username = username).user_hand_portrait
+                return render(request,'oncedonate.html',{'item':item,
+                                                         'develoment':develoment,
+                                                         'percent':percent,
+                                                         'username':username,
+                                                         'user_hand_portrait':user_hand_portrait})
+            except:
+                return  render(request, 'oncedonate.html',{'item': item,
+                                                           'develoment': develoment,
+                                                           'percent': percent,
+                                                           'username': "未登录",
+                                                           'user_hand_portrait': '../media/user_hand_portrait/default.png'})
 
-            return  render(request, 'oncedonate.html',
-                          {'item': item, 'develoment': develoment, 'percent': percent})
 
 
 
     def post(self,request):
-        # Donate.project_id = int(request.GET.get("project_id"))
-        # item = project.objects.get(project_id=Donate.project_id)
-        # Donate.subject = item.name
+        Donate.project_id = int(request.GET.get("project_id"))
+        item = project.objects.get(project_id=Donate.project_id)
+        Donate.subject = item.name
 
         order = pay(request,Donate.project_id,Donate.subject)
 
@@ -243,6 +270,9 @@ def pay(request,project_id,subject):
 
 class Personal(View):
     def get(self,request):
+        if request.GET.get('login_out') == '1':
+            del request.session['username']
+            return render(request, "crowdfunding.html", {})
         #user_id = request.uesr.id
         try:
             username = request.session['username']
@@ -292,8 +322,7 @@ class Personal(View):
                                                            'project_num': project_num,
                                                            'help_num': help_num,
                                                            'auid_project_num': audit_project_num,
-                                                           'audit_projects': audit_projects,
-                                                           'all': all
+
                                                            })
         except Exception:
             HttpResponse('页面被外星人盗走la')

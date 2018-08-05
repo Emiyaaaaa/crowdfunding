@@ -1,4 +1,4 @@
-#!E:\python\untitled\txy\venv\Scripts\python.exe
+#!e:\Users\ASUS\PycharmProjects\yundin\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==9.0.1','console_scripts','pip3.6'
 __requires__ = 'pip==9.0.1'
 import re

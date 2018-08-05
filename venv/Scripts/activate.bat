@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=E:\python\untitled\txy\venv"
+set "VIRTUAL_ENV=e:\Users\ASUS\PycharmProjects\yundin\venv"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"

@@ -201,6 +201,9 @@ class RegisterView(View):
 class ModifyMessageView(View):
 
     def get(self, request):
+        if request.session['username'] is not None and request.GET.get('login_out') == '1':
+            del request.session['username']
+            return render(request, "crowdfunding.html", {})
         username = request.session["username"]
         all_message = UserMessage.objects.filter(username=username)
         for message in all_message:

@@ -50,8 +50,8 @@
 				<form class="form-control" method="post" autocomplete="off">
 					<input type="text" name="username" placeholder="请输入用户名" />
 					<input type="password" name="password" placeholder="请输入密码" />
+                    <button href="/crowdfunding/?login_out=0" class="btn" tpye = "submit">登&nbsp;录</button>
 
-					<button class="btn" tpye = "submit">登&nbsp;录</button>
 					<a href="forgetpwd.html" id="forgot" class="fl">忘记密码</a>
 					<a href="{% url 'regist' %}" id="newuser" class="fr">新用户注册</a>
                     {% csrf_token %}
@@ -139,79 +139,21 @@
 				撑起孩子的圆梦之路
 			</div>
 
-				<div class="newschool clearfix fl ">
-                    <a href="/oncedonate/?project_id={{edu1.project_id}}">
-                        <div class="newschoolmask">
-                            <p>{{ edu1.name }}</p>
-                        </div>
-                        <img src="/media/{{ edu1.befor_image }}" width="100%" height="100%" />
-                    </a>
-				</div>
-
-
-			<div class="educatecontain fl">
+				<div class="educatecontain fl">
+                {% for edu in edus %}
 
 				<div class="newbook">
 
-					<a href="/oncedonate/?project_id={{edu2.project_id}}">
+					<a href="/oncedonate/?project_id={{edu.project_id}}">
 						<div class="newbookmask">
-							<p>{{ edu2.name }}</p>
+							<p>{{ edu.name }}</p>
 						</div>
-						<img src="/media/{{ edu2.befor_image }}" width="100%" height="100%" />
+						<img src="/media/{{ edu.befor_image }}" width="100%" height="100%" />
 
 					</a>
 
 				</div>
-
-				<div class="backschool">
-
-					<a href="/oncedonate/?project_id={{edu3.project_id}}">
-						<div class="backschoolmask">
-							<p style="transform: translateY(10px);">{{ edu3.name }}</p>
-						</div>
-						<img src="/media/{{ edu3.befor_image }}" width="100%" height="100%" />
-
-					</a>
-				</div>
-
-				<div class="sleepbook">
-					<a href="/oncedonate/?project_id={{edu4.project_id}}">
-						<div class="sleepbookmask">
-							<p>{{ edu4.name }}</p>
-						</div>
-						<img src="/media/{{ edu4.befor_image }}" width="100%" height="100%" />
-
-					</a>
-				</div>
-
-				<div class="scholarship">
-					<a href="/oncedonate/?project_id={{edu5.project_id}}">
-						<div class="scholarshipmask">
-							<p>{{ edu5.name }}</p>
-						</div>
-						<img src="/media/{{ edu5.befor_image }}" width="100%" height="100%" />
-
-					</a>
-				</div>
-
-				<div class="lunch">
-					<a href="/oncedonate/?project_id={{edu6.project_id}}">
-						<div class="lunchmask" style="transform: translateY(10px);">
-							<p>{{ edu6.name }}</p>
-						</div>
-						<img src="/media/{{ edu6.befor_image }}" width="100%" height="100%" />
-
-					</a>
-				</div>
-				<div class="lunch">
-					<a href="/oncedonate/?project_id={{edu7.project_id}}">
-						<div class="lunchmask" style="transform: translateY(10px);">
-							<p>{{ edu7.name }}</p>
-						</div>
-						<img src="/media/{{ edu7.befor_image }}" width="100%" height="100%" />
-
-					</a>
-				</div>
+                {% endfor %}
 
 			</div>
 
@@ -223,82 +165,23 @@
 				解决留守儿童的后顾之忧
 			</div>
 			<div class="poverty_contain">
-				<div class="life_help fl">
 
+				<div class="life_help fl">
+                    {% for support in supports %}
 					<div class="newbook">
 
-						<a href="/oncedonate/?project_id={{support1.project_id}}">
+						<a href="/oncedonate/?project_id={{support.project_id}}">
 							<div class="newbookmask">
-								<p>{{ support1.name }}</p>
+								<p>{{ support.name }}</p>
 							</div>
-							<img src="/media/{{ support1.befor_image }}" width="100%" height="100%" />
+							<img src="/media/{{ support.befor_image }}" width="100%" height="100%" />
 
 						</a>
 
 					</div>
-
-					<div class="backschool">
-
-						<a href="/oncedonate/?project_id={{support2.project_id}}">
-							<div class="backschoolmask">
-								<p>{{ support2.name }}</p>
-							</div>
-							<img src="/media/{{ support2.befor_image }}" width="100%" height="100%" />
-
-						</a>
-					</div>
-
-					<div class="sleepbook">
-						<a href="/oncedonate/?project_id={{support3.project_id}}">
-							<div class="sleepbookmask">
-								<p>{{ support3.name }}</p>
-							</div>
-							<img src="/media/{{ support3.befor_image }}" width="100%" height="100%" />
-
-						</a>
-					</div>
-
-					<div class="scholarship">
-						<a href="/oncedonate/?project_id={{support4.project_id}}">
-							<div class="scholarshipmask" style="transform: translateY(2px);">
-								<p>{{ support4.name }}</p>
-							</div>
-							<img src="/media/{{ support4.befor_image }}" width="100%" height="100%" />
-
-						</a>
-					</div>
-
-					<div class="lunch">
-						<a href="/oncedonate/?project_id={{support5.project_id}}">
-							<div class="lunchmask" style="transform: translateY(10px);">
-								<p>{{ support5.name }}</p>
-							</div>
-							<img src="/media/{{ support5.befor_image }}" width="100%" height="100%" />
-
-						</a>
-					</div>
-					<div class="lunch">
-						<a href="/oncedonate/?project_id={{support6.project_id}}">
-							<div class="lunchmask" style="transform: translateY(10px);">
-								<p>{{ support6.name }}</p>
-							</div>
-							<img src="/media/{{ support6.befor_image }}" width="100%" height="100%" />
-
-						</a>
-					</div>
+                    {% endfor %}
 
 				</div>
-                <a href="/oncedonate/?project_id={{support7.project_id}}">
-                    <div class="long_box fl">
-                        <div class="longboxmask">
-                            <p>{{ support7.name }}</p>
-                        </div>
-                        <img src="/media/{{ support7.befor_image }}" width="100%" height="100%" />
-
-                    </div>
-                </a>
-
-			</div>
 		</div>
 		<div class="data">
 			<div class="educatetitle">
@@ -308,62 +191,17 @@
 			</div>
 			<div class="dataleft fl">
 				<ul>
+					{% for log in logs %}
 					<li><span class="name">
-							{{ log6.Donation_name}}
+							{{ log.Donation_name}}
 						</span> 捐款
 
-						<span class="money">{{ log6.donate_money }}元</span>
+						<span class="money">{{ log.donate_money }}元</span>
 						<div class="time">
-							{{ log6.donate_at }}
+							{{ log.donate_at }}
 						</div>
 					</li>
-
-					<li>
-						<span class="name">
-							{{ log5.Donation_name }}
-						</span> 捐款
-
-						<span class="money">{{ log5.donate_money }}元</span>
-						<div class="time">
-							{{ log5.donate_at }}
-						</div>
-					</li>
-					<li><span class="name">
-							{{ log4.Donation_name }}
-						</span> 捐款
-
-						<span class="money">{{ log4.donate_money }}元</span>
-						<div class="time">
-							{{ log4.donate_at }}
-						</div>
-					</li>
-					<li><span class="name">
-							{{ log3.Donation_name }}
-						</span> 捐款
-
-						<span class="money">{{ log3.donate_money }}元</span>
-						<div class="time">
-							{{ log3.donate_at }}
-						</div>
-					</li>
-					<li><span class="name">
-                            {{ log2.Donation_name }}
-						</span> 捐款
-
-						<span class="money">{{ log2.donate_money }}元</span>
-						<div class="time">
-							{{ log2.donate_at }}
-						</div>
-					</li>
-					<li><span class="name">
-							{{ log1.Donation_name }}
-						</span> 捐款
-
-						<span class="money">{{ log1.donate_money }}元</span>
-						<div class="time">
-							{{ log1.donate_at }}
-						</div>
-					</li>
+                    {% endfor %}
 				</ul>
 
 			</div>

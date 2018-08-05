@@ -25,7 +25,7 @@ from django.views.static import serve
 import xadmin
 from django.contrib import admin
 import django.views.static
-# from django.urls import path
+from django.urls import path
 from django.conf.urls import url,include
 from donate.views import CrowdFundingDisplay,Donate,Personal
 from donate.views import PersonalCenter
@@ -39,6 +39,8 @@ urlpatterns = [
     url('xadmin/', xadmin.site.urls),
     url('admin/', admin.site.urls),
     url('oncedonate/',Donate.as_view()),
+    # url('crowdfunding/', LoginOut.as_view(), name='login_out'),
+
     url('crowdfunding/',CrowdFundingDisplay.as_view(),name='crowdfunding'),
     # path('oncedonate/?project_id=(d+)&charset=utf-8&out_trade_no=(.*?)',donateLog.as_view())
     url('personal/',Personal.as_view()),
@@ -51,7 +53,7 @@ urlpatterns = [
 
     url('personalcenter/',PersonalCenter.as_view(),name='personalcenter'),
     url(r'^ueditor/',include('DjangoUeditor.urls')),
-    url(r'news/',include('news.urls'),name = 'news'),
+    path(r'news/',include('news.urls'),name = 'news'),
     url(r'media/(?P<path>.*)$',django.views.static.serve, {'document_root': './media'})
 ]
 urlpatterns += static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT )
