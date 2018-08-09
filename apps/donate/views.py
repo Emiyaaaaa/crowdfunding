@@ -377,7 +377,8 @@ class PersonalCenter(View):
                                                                    "user_gender": message.user_gender,
                                                                    "user_signature": message.user_signature,
                                                                    "user_mobile": message.user_mobile,
-                                                                   "user_hand_portrait": message.user_hand_portrait
+                                                                   "user_hand_portrait": message.user_hand_portrait,
+                                                                  'helps':helps
                                                                })
         except Exception:
             return HttpResponse('页面被外星人盗走la')

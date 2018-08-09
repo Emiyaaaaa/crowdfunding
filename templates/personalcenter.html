@@ -78,10 +78,10 @@
 					<li><img class="img-responsive" src="img/发起人/发起人1.png" />
 						<a href="initiator.html">&nbsp;发起人</a>
 					</li>
-					<li><img class="img-responsive" src="img/发起人/发起人2.png" />
+					<li><img class="img-responsive" src="../media/img/发起人/发起人2.png" />
 						<a href="">&nbsp;审核员1</a>
 					</li>
-					<li class="no-mr"><img class="img-responsive" src="img/发起人/发起人3.png" />
+					<li class="no-mr"><img class="img-responsive" src="../media/img/发起人/发起人3.png" />
 						<a href="">&nbsp;审核员2</a>
 					</li>
 				</ul>
@@ -194,7 +194,7 @@
 									<a href="/oncedonate/?project_id={{item.project_id}}">
 										<div class="box_contain fr">
 											<p>{{ item.name }}</p>
-											<p>{{ item.introduce }}</p>
+
 											<div class="progress_bar" data-perc={{ percent }}>
 												<div class="progress_barleft" style="width:{{ percent }}%;">
 												</div>
@@ -226,6 +226,9 @@
 				</div>
 				<div class="tab-pane fade" id="myhelped">
 					<p>这里是我帮助过</p>
+                    {% for help in helps %}
+                        <div>{{ help.project }}</div>
+                    {% endfor %}
 				</div>
 				<div class="tab-pane fade" id="personal_setting">
 					<ul id="myTab2" class="nav nav-pills">
